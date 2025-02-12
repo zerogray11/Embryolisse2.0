@@ -7,24 +7,33 @@ const Chatbot = () => {
 
     const sendMessage = async () => {
         if (!input.trim()) return;
-
+    
         const userMessage = { role: 'user', content: input };
         const updatedMessages = [...messages, userMessage];
         setMessages(updatedMessages);
         setInput('');
-
+    
         try {
             const response = await axios.post('http://localhost:5001/api/chat', {
                 messages: updatedMessages,
             });
-
+    
             const botResponse = response.data.response;
-
+    
+            // Handle the response based on its format
             if (typeof botResponse === 'string') {
+                // If the response is a string, add it as a bot message
                 setMessages([...updatedMessages, { role: 'assistant', content: botResponse }]);
-            } else if (typeof botResponse === 'object' && botResponse.message && botResponse.products) {
-                const botMessage = { role: 'assistant', content: botResponse.message, products: botResponse.products };
-                setMessages([...updatedMessages, botMessage]);
+            } else if (typeof botResponse === 'object' && botResponse.message) {
+                // If the response is an object with a 'message' property
+                if (botResponse.products) {
+                    // If the response includes products, add them to the message
+                    const botMessage = { role: 'assistant', content: botResponse.message, products: botResponse.products };
+                    setMessages([...updatedMessages, botMessage]);
+                } else {
+                    // If the response only has a message, add it as a bot message
+                    setMessages([...updatedMessages, { role: 'assistant', content: botResponse.message }]);
+                }
             } else {
                 console.error('Unexpected response format:', botResponse);
             }
@@ -32,7 +41,6 @@ const Chatbot = () => {
             console.error('Error sending message:', error);
         }
     };
-
     return (
         <div style={styles.chatbotContainer}>
             <h1 style={styles.header}>Skincare Consultant</h1>
