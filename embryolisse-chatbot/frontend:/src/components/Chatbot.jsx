@@ -4,35 +4,44 @@ import axios from 'axios';
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
+    const [context, setContext] = useState({}); // To manage conversation context
 
     const sendMessage = async () => {
         if (!input.trim()) return;
-    
+
+        // Add user message to the chat
         const userMessage = { role: 'user', content: input };
         const updatedMessages = [...messages, userMessage];
         setMessages(updatedMessages);
         setInput('');
-    
+
         try {
+            // Send the updated messages and context to the backend
             const response = await axios.post('http://localhost:5001/api/chat', {
                 messages: updatedMessages,
+                context: context, // Include the current context
             });
-    
+
             const botResponse = response.data.response;
-    
-            // Handle the response based on its format
-            if (typeof botResponse === 'string') {
-                // If the response is a string, add it as a bot message
-                setMessages([...updatedMessages, { role: 'assistant', content: botResponse }]);
-            } else if (typeof botResponse === 'object' && botResponse.message) {
-                // If the response is an object with a 'message' property
-                if (botResponse.products) {
-                    // If the response includes products, add them to the message
-                    const botMessage = { role: 'assistant', content: botResponse.message, products: botResponse.products };
-                    setMessages([...updatedMessages, botMessage]);
-                } else {
-                    // If the response only has a message, add it as a bot message
-                    setMessages([...updatedMessages, { role: 'assistant', content: botResponse.message }]);
+
+            // Handle the backend response
+            if (botResponse && botResponse.message) {
+                const botMessage = {
+                    role: 'assistant',
+                    content: botResponse.message,
+                };
+
+                // Add product details if available
+                if (botResponse.product_details) {
+                    botMessage.product_details = botResponse.product_details;
+                }
+
+                // Update the messages with the bot's response
+                setMessages([...updatedMessages, botMessage]);
+
+                // Update the context if provided by the backend
+                if (botResponse.context) {
+                    setContext(botResponse.context);
                 }
             } else {
                 console.error('Unexpected response format:', botResponse);
@@ -41,6 +50,7 @@ const Chatbot = () => {
             console.error('Error sending message:', error);
         }
     };
+
     return (
         <div style={styles.chatbotContainer}>
             <h1 style={styles.header}>Skincare Consultant</h1>
@@ -50,18 +60,16 @@ const Chatbot = () => {
                         <div style={msg.role === 'user' ? styles.userMessage : styles.botMessage}>
                             {msg.content}
                         </div>
-                        {msg.products && (
+                        {msg.product_details && (
                             <div style={styles.productList}>
-                                {msg.products.map((product, idx) => (
-                                    <div key={idx} style={styles.productItem}>
-                                        <img src={product.image_url} alt={product.name} style={styles.productImage} />
-                                        <div style={styles.productDetails}>
-                                            <h4 style={styles.productName}>{product.name}</h4>
-                                            <p>{product.description}</p>
-                                            <a href={product.product_url} target="_blank" rel="noopener noreferrer" style={styles.productLink}>Buy Now</a>
-                                        </div>
+                                <div style={styles.productItem}>
+                                    <div style={styles.productDetails}>
+                                        <h4 style={styles.productName}>{msg.product_details.name}</h4>
+                                        <p>{msg.product_details.description}</p>
+                                        <p>Price: {msg.product_details.price}</p>
+                                        <p>Size: {msg.product_details.size}</p>
                                     </div>
-                                ))}
+                                </div>
                             </div>
                         )}
                     </div>
@@ -86,7 +94,7 @@ const styles = {
     chatbotContainer: {
         width: '400px',
         height: '600px',
-        backgroundColor: '#f5f5dc',  // Keeping the original beige color for the container
+        backgroundColor: '#f5f5dc',
         borderRadius: '10px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         display: 'flex',
@@ -108,33 +116,33 @@ const styles = {
     },
     userMessageContainer: {
         display: 'flex',
-        justifyContent: 'flex-end',  // Align user message to the right
+        justifyContent: 'flex-end',
         marginBottom: '10px',
     },
     botMessageContainer: {
         display: 'flex',
-        justifyContent: 'flex-start',  // Align bot message to the left
+        justifyContent: 'flex-start',
         marginBottom: '10px',
     },
     userMessage: {
         padding: '12px 18px',
-        backgroundColor: 'white', // White background for user message bubbles
+        backgroundColor: 'white',
         borderRadius: '15px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.05)',
         fontSize: '14px',
-        display: 'block',  // Makes sure each message is on its own line
-        maxWidth: '80%',  // Set maximum width of the bubble
+        display: 'block',
+        maxWidth: '80%',
         wordBreak: 'break-word',
         marginLeft: 'auto',
     },
     botMessage: {
         padding: '12px 18px',
-        backgroundColor: 'white', // White background for bot message bubbles
+        backgroundColor: 'white',
         borderRadius: '15px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.05)',
         fontSize: '14px',
-        display: 'block',  // Makes sure each message is on its own line
-        maxWidth: '80%',  // Set maximum width of the bubble
+        display: 'block',
+        maxWidth: '80%',
         wordBreak: 'break-word',
         marginRight: 'auto',
     },
@@ -152,12 +160,6 @@ const styles = {
         borderRadius: '10px',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
     },
-    productImage: {
-        width: '60px',
-        height: '60px',
-        borderRadius: '8px',
-        marginRight: '15px',
-    },
     productDetails: {
         flex: 1,
     },
@@ -165,13 +167,6 @@ const styles = {
         fontSize: '16px',
         fontWeight: '600',
         color: '#4B3C31',
-    },
-    productLink: {
-        textDecoration: 'none',
-        color: '#8B5E3C',
-        fontSize: '14px',
-        fontWeight: '500',
-        marginTop: '5px',
     },
     inputContainer: {
         display: 'flex',

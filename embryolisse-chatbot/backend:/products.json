@@ -1,0 +1,1517 @@
+[
+  {
+    "product": {
+    "title": "Lait-Crème Retinol-Like",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Lait-Crème",
+    "size": "2.54 fl.oz.",
+    "price": "$45.00",
+    "seo_title": "New Lait Crème Retinol-Like Moisturizer | Embryolisse USA",
+    "seo_description": "With Lait-Crème Retinol-like, discover all the powers of Lait-Crème Concentré, plus the added power of anti-wrinkling! A supercharged 5-in-1 skincare product.",
+    "faqs": [
+      {
+        "question": "Is the product suitable for all skin types?",
+        "answer": "Yes, the Lait Crème Retinol-Like is suitable for all skin types, including sensitive skin. Thanks to its optimally tolerated formula, it's ideal for daily use."
+      },
+      {
+        "question": "How long does it take to see results?",
+        "answer": "Results may vary from person to person, but most users notice an improvement in skin texture and appearance after one month of daily use."
+      },
+      {
+        "question": "Can I use the Lait-Crème Retinol-Like in the summer?",
+        "answer": "Yes, you can use it all year round, including summer, as the retinol-like active ingredient is not phototoxic. However, always protect your skin with sunscreen."
+      }
+    ],
+    "benefits": [
+      "Hydrating anti-wrinkle care",
+      "Smoothing makeup base",
+      "Regenerating mask",
+      "Replenishing night cream",
+      "Revitalizing body lotion"
+    ],
+    "ingredients": [
+      "French Big Clover Extract",
+      "Organic Aloe Vera",
+      "Shea Butter",
+      "Organic Carnauba Wax"
+    ],
+    "usage": {
+      "morning": "Apply to the face as a smoothing makeup base or hydrating anti-wrinkle treatment.",
+      "evening": "Use as a replenishing night cream.",
+      "body": "Use as a revitalizing body lotion.",
+      "mask": "Apply a thick layer as a regenerating mask 2-3 times weekly."
+    },
+    "eco_conception": {
+      "aluminum_tube": "95% recycled aluminum, infinitely recyclable",
+      "packaging": "FSC-certified recyclable cardboard case from eco-managed forests"
+    } }
+  },
+  { 
+    "product": {
+    "title": "Complete Serum",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Aging",
+    "size": "1.01 fl.oz.",
+    "price": "$45.00",
+    "seo_description": "Anti-aging Complete Serum. The best of French Skincare. Effective and tolerant formulas with the right active ingredients of natural origin.",
+    "benefits": [
+      "Replumped skin",
+      "Re-densified skin",
+      "Lifted skin",
+      "Toned skin",
+      "Firmer skin",
+      "Supple skin",
+      "Smoother skin",
+      "Luminous skin",
+      "Face appears rested",
+      "Skin appears younger"
+    ],
+    "eco_conception": {
+      "glass_jar": "Infinitely recyclable glass jar",
+      "packaging": "FSC-certified recyclable cardboard case from eco-managed forests"
+    },
+    "ingredients": [
+      "Hyaluronic acid: moisturizing properties, binds and retains water, smoothing and plumping",
+      "Lychee extract: firming action",
+      "Plantain extract: lifting action",
+      "Evening primrose oil for comfort, suppleness, and softness"
+    ],
+    "usage": {
+      "morning": "Apply morning and evening before usual skincare to clean, dry skin, smooth over the entire face and neck."
+    } }
+  },
+  {
+    "product": {
+    "title": "Firming-Lifting Cream",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Aging",
+    "size": "1.69 fl.oz.",
+    "price": "$55.00",
+    "seo_description": "NEW Firming Lifting Cream. The best of French Skincare. Effective and tolerant formulas with the right active ingredients of natural origin.",
+    "benefits": [
+      "Fills in wrinkles and replumps the skin",
+      "Improves skin firmness",
+      "Provides a lifting effect"
+    ],
+    "eco_conception": {
+      "glass_jar": "Infinitely recyclable glass jar",
+      "packaging": "FSC-certified recyclable cardboard case from eco-managed forests"
+    },
+    "ingredients": [
+      "Hyaluronic acid: moisturizing properties, binds and retains water, smoothing and plumping",
+      "Organic kangaroo flower extract: firming and anti slackening action",
+      "Lychee extract: firming",
+      "Primrose oil for comfort, suppleness, and softness"
+    ],
+    "usage": {
+      "morning": "Apply morning and evening to clean, dry skin, smooth over the entire face and neck."
+    } }
+  },
+  { 
+    "product": {
+    "title": "Intense Lift Eye Cream",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Aging",
+    "size": "0.5 fl.oz.",
+    "price": "$40.00",
+    "seo_title": "Intense Lift Eye Cream | EMBRYOLISSE Skincare",
+    "seo_description": "Intense Lift Eye Cream is the best of French Skincare. Its formulas are effective and tolerant, with the right active ingredients of natural origin.",
+    "benefits": [
+      "Lifts eyelids",
+      "Reduces dark circles, eye bags, and wrinkles",
+      "Eyes look bigger, skin regains freshness and vitality"
+    ],
+    "eco_conception": {
+      "glass_jar": "Infinitely recyclable glass jar",
+      "packaging": "FSC-certified recyclable cardboard case from eco-managed forests"
+    },
+    "ingredients": [
+      "Hyaluronic acid: moisturizing properties, binds and retains water, smoothing and plumping",
+      "Organic chestnut blossom extract: lifting and brightening",
+      "Lychee extract: firming action",
+      "Evening primrose oil for comfort, suppleness, and softness"
+    ],
+    "usage": {
+      "morning": "Apply morning and evening to the eye contour and eyelids. For an eyelid-lifting effect, smooth upwards from the inner corner of the eye to the tip of the eyebrow. This product can also be applied to the lip contour."
+    } }
+  },
+  { "product": {
+    "title": "Anti-Age Comfort Mask - Face Anti-Aging Mask",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Aging",
+    "size": "2.03 fl.oz.",
+    "price": "$30.00",
+    "seo_title": "Anti-Age Comfort Mask | Embryolisse USA",
+    "seo_description": "Anti-Age Comfort Mask New Formula is an Intensive smoothing care that reduces fine lines and wrinkles and regenerates the skin. A youth infusion for a rested look.",
+    "benefits": [
+      "Reduces the effects of time and fatigue",
+      "Visibly reduced wrinkles",
+      "Plumped, toned, revitalized skin"
+    ],
+    "eco_conception": {
+      "aluminum_tube": "Infinitely recyclable aluminum tube",
+      "packaging": "FSC-certified recyclable cardboard case from eco-managed forests"
+    },
+    "ingredients": [
+      "Hyaluronic acid: moisturizing properties, binds and retains water, smoothing and plumping",
+      "Camellia and shea butter: restructuring and anti-aging properties",
+      "Vitamins A, E, and F: regenerating and antioxidant properties"
+    ],
+    "usage": {
+      "twice_a_week": "Apply twice a week to clean, dry skin over the face and neck. Leave for 10 to 15 minutes then remove the excess.",
+      "night_mask": "It can also be used as a night mask."
+    }
+  } },
+  {
+    "product": {
+    "title": "Nutri-Vitality Cream",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Aging",
+    "size": "1.69 fl.oz.",
+    "price": "$60.00",
+    "seo_description": "NEW Nutri-Vitality Cream. The best of French Skincare. Effective and tolerant formulas with 97% ingredients of natural origin.",
+    "faqs": [
+      {
+        "question": "How long can this treatment be stored?",
+        "answer": "You can store the Nutri-Vitality Cream for 6 months after opening."
+      },
+      {
+        "question": "Is your skin experiencing a loss of firmness and vitality?",
+        "answer": "The Nutri-Vitality Cream is a new multi-benefit global anti-aging treatment that will help your skin regain and maintain its full vitality. Enriched with nourishing, fortifying, and regenerating natural active ingredients, it allows the skin to regain its firmness and radiance."
+      },
+      {
+        "question": "Can I use it with a serum?",
+        "answer": "Yes, absolutely. Depending on the needs of your skin, you can choose one of our serums. Looking for an anti-aging serum to complement the action of the Nutri-Vitality Cream? Go for the Complete Serum, it's the multitasking go-to that targets all signs of aging. Do you have dehydrated skin? We recommend the Hydra-Serum. Is your skin lacking radiance? The Sérum Bonne Mine is what you need."
+      }
+    ],
+    "benefits": [
+      "The natural global anti-aging treatment based on red maple that stimulates the synthesis of collagen & elastin.",
+      "Acts at the source of skin aging: Loss of vitality and malnutrition.",
+      "97% of women find their skin in great shape: density, appearance, radiance."
+    ],
+    "eco_conception": {
+      "glass_jar": "Infinitely recyclable glass jar",
+      "packaging": "FSC-certified recyclable cardboard case from eco-managed forests"
+    },
+    "ingredients": [
+      "Red maple extract: reactivates the skin's natural defense system",
+      "Shea butter: nourishing and repairing",
+      "Borage oil: restores skin's elasticity and comfort"
+    ],
+    "usage": {
+      "morning": "Apply to clean, dry skin on the face and neck, smoothing it in. Can be used morning and night for firmer, more radiant skin."
+    }
+  } }
+,
+
+
+{
+  "product": {
+    "title": "3-in-1 Secret Paste",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Blemish",
+    "size": "3.38 fl.oz.",
+    "price": "$30.00",
+    "seo_title": "3-in-1 Secret Paste Skincare | Embryolisse USA",
+    "seo_description": "3-in-1 Secret Paste is a multipurpose anti-blemish product formulated with 98% natural ingredients. Ultra-active Turmeric is combined with two other 100% natural ingredients to improve skin quality and radiance.",
+    "benefits": [
+      "1 Secret Paste, 3 possibilities:",
+      "1. S.O.S. ANTI-BLEMISH CARE: Applied directly to blemishes in the evening, 3 in 1 Secret Paste works overnight to dry out pimples and reduce redness.",
+      "2. ANTI-SHINE MASK: When applied in a thick layer once or twice a week for 10 minutes, 3-in-1 Secret Paste works as an absorbent, purifying mask that directly targets sebum production. Rinsed off with water, detoxified skin immediately looks fresher and healthier, and imperfections are visibly diminished.",
+      "3. DAILY PURIFYING CLEANSER: Once a day, massage the 3 in 1 Secret Paste over damp skin, like a classic cleanser and enjoy the extra purifying and deep cleansing benefits. It leaves skin perfectly clean and ready for the subsequently applied active ingredients."
+    ],
+    "eco_conception": {
+      "tube": "Recyclable tube made with 60% recycled plastic, which helps preserve natural resources.",
+      "packaging": "Packaging-free."
+    },
+    "ingredients": [
+      "Organic Turmeric extract (Concentrated in Turmerones): Anti-blemish, anti-mark, evens skin tone",
+      "Chickpea powder: Purifying properties. It acts on the clarity of the complexion, marks",
+      "Yellow clay: Absorbent properties. Regulates sebum production"
+    ],
+    "usage": [
+      "ANTI-BLEMISH: Apply directly to blemishes in the evening and leave on overnight. Rinse off with water the next day. If needed, repeat application.",
+      "MASK: Apply a thick layer to the face once or twice a week. Leave on for 10 minutes, then rinse with water.",
+      "CLEANSER: Once daily, apply to damp skin, massage, and then rinse."
+    ],
+    "dermatologically_tested": "Dermatologically tested. Suitable for sensitive skin. Non-comedogenic."
+  }
+}
+,
+{
+  "product": {
+    "title": "Mattifying Moisturizer",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Blemish",
+    "size": "1.69 fl.oz.",
+    "price": "$30.00",
+    "seo_title": "Mattifying Moisturizer | Embryolisse Skincare",
+    "seo_description": "Mattifying Moisturizer (98% ingredients of natural origin) is an alcohol-free moisturizer for combination to oily skin. Pores are tightened, the complexion is more even, toned, and shine-free for longer.",
+    "benefits": [
+      "Combination with oily skin types, in particular, requires moisture replenishment. It’s absolutely vital! Formulated with 98% natural ingredients, vegetable glycerin-enriched Mattifying Moisturizer is perfectly suited as a day—or night-time treatment after the Anti-Blemish Serum.",
+      "The immediate benefits? A matte finish, thanks to the absorbing action of a fine, invisible powder combined with organic Turmeric extract.",
+      "RESULTS: The skin is perfectly hydrated morning and evening, pores are tightened, the complexion becomes more even, and shine is reduced in the long term."
+    ],
+    "eco_conception": {
+      "tube": "Recyclable tube made with 55% recycled plastic, which helps preserve natural resources.",
+      "packaging": "Packaging-free."
+    },
+    "ingredients": [
+      "Organic Turmeric extract (Concentrated in Turmerones): Anti-blemish, anti-mark, evens skin tone",
+      "Mattifying powder: Absorbs excess sebum and mattifies shiny areas.",
+      "Glycerin from plants: Moisturizes"
+    ],
+    "usage": [
+      "Apply to the face morning and evening on clean, dry skin."
+    ],
+    "dermatologically_tested": "Dermatologically tested. Suitable for sensitive skin. Non-comedogenic."
+  }
+},
+
+{
+  "product": {
+    "title": "Anti-Blemish Serum",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Anti-Blemish",
+    "size": "1.01 fl.oz.",
+    "price": "$35.00",
+    "seo_title": "Anti-Blemish Serum | Embryolisse USA",
+    "seo_description": "Anti-Blemish Serum (99% ingredients of natural origin) is for combination to oily skin prone to acne. It acts on 6 different types of imperfections: pimples, redness, rashes, blackheads, marks, and sebum.",
+    "benefits": [
+      "The Anti-Blemish Serum is a powerful treatment that targets and diminishes 6 different types of skin imperfections: acne, redness, breakouts, blackheads, blemishes, and excess oil.",
+      "It works to rebalance and improve overall skin quality, delivering visible results. This serum can be applied to the entire face or targeted areas like the décolleté, back, and shoulders. With its 99% natural formula, it is both effective and long-lasting.",
+      "RESULTS: Reduced acne, breakouts, and redness. Excess oil and shine will be regulated, while your skin texture becomes smoother and your complexion appears purified."
+    ],
+    "eco_conception": {
+      "bottle": "Infinitely recyclable glass bottle made from 60% recycled materials.",
+      "packaging": "Packaging-free."
+    },
+    "ingredients": [
+      "Organic Turmeric extract (Concentrated in Turmerones): Anti-blemish, anti-mark, evens skin tone",
+      "Polylysine (Essential amino acid from green chemistry): Rebalances skin microbiota, regulates sebum production",
+      "Alcohol-free: Non-aggressive for the skin, no rebound effect"
+    ],
+    "usage": [
+      "Apply morning and evening to the entire face and to blemishes on the body (chest, back, shoulders)."
+    ],
+    "dermatologically_tested": "Dermatologically tested. Suitable for sensitive skin. Non-comedogenic."
+  }
+},
+  {
+    "product": {
+      "title": "Radiant Complexion Cream - Pink Glow",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Artist Secret",
+      "size": "1.01 fl.oz.",
+      "price": "$32.00",
+      "seo_title": "Radiant Complexion Cream - Pink Glow | Embryolisse USA",
+      "seo_description": "Instantly makes you look as fresh as a rose! Radiant Complexion Cream (pink shade) is an innovative hybrid tinted product that applies like a moisturizer over the entire face, including the eye contour, to enhance the complexion immediately.",
+      "benefits": [
+        "The Pink Radiant Complexion Cream is an innovative hybrid product that applies like a moisturizer over the entire face, including the eye contour, to enhance the complexion immediately.",
+        "SKINCARE BENEFITS: Formula of natural origin with silk tree extract and hyaluronic acid: Erases signs of skin fatigue, Reduces dark circles and puffiness, Plumps the skin.",
+        "BEAUTY BENEFITS: A universal pink shade, developed by an expert makeup artist, naturally blends with the skin for an instant healthy glow and ultra-luminous complexion."
+      ],
+      "eco_conception": {
+        "tube": "Aluminum tube infinitely recyclable.",
+        "packaging": "Cardboard packaging recyclable and sourced from sustainably managed forests. By using FSC-certified cardboard for these packages, Embryolisse supports forest management that respects people and nature."
+      },
+      "ingredients": [
+        "Silk tree bark extract revives the complexion and detoxifies.",
+        "Natural origin hyaluronic acid hydrates and plumps.",
+        "Pigments and nacres for a healthy glow effect."
+      ],
+      "usage": [
+        "Apply to the face, let it absorb, and admire the glow of your skin. Can be used as a makeup primer. Suitable for sensitive skin."
+      ],
+      "dermatologically_tested": "Tolerance tested under dermatological control. Suitable for sensitive skin."
+    }
+  },
+  {
+    "product": {
+      "title": "Radiant Complexion Cream - Apricot Glow",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Artist Secret",
+      "size": "1.01 fl.oz.",
+      "price": "$32.00",
+      "seo_title": "Radiant Complexion Cream - Apricot Glow | Embryolisse USA",
+      "seo_description": "The Radiant Complexion Cream (Apricot shade) is a detoxifying day cream with a gel-cream texture that applies like a moisturizing treatment all over the face, including the eye contour. It is a new tinted moisturizer that combines care and makeup, naturally blending with the skin.",
+      "faq": [
+        {
+          "question": "Does the Radiant Complexion Cream suit sensitive skin?",
+          "answer": "Yes, this day cream is suitable for all skin types. Very good skin tolerance has been proven under dermatological control after testing on 100% sensitive skin."
+        },
+        {
+          "question": "Can the Radiant Complexion Cream be used as a makeup base?",
+          "answer": "Absolutely. Its light and moisturizing texture makes it an excellent primer that prepares the skin for makeup."
+        },
+        {
+          "question": "Is the Radiant Complexion Cream - Apricot Glow tested on animals?",
+          "answer": "No, our products are not tested on animals. In accordance with European regulations in force since 2013. We do not conduct and do not allow any animal testing for our cosmetics, whether for our finished products or the ingredients that compose them."
+        }
+      ],
+      "benefits": [
+        "The Radiant Complexion Cream (Apricot shade) is a detoxifying day cream with a gel-cream texture that applies like a moisturizing treatment all over the face, including the eye contour. It is a new product that combines care and makeup, naturally blending with the skin. It smooths and refines the skin texture, reducing dark circles and puffiness to reveal an immediate golden glow and a natural radiance.",
+        "SKINCARE BENEFITS: A natural origin composition with nasturtium flower and hyaluronic acid to: Intensely hydrate and maintain the water balance, Detoxify and rejuvenate dull and tired skin, Smooth the eye contour and diminish signs of fatigue.",
+        "BEAUTY BENEFITS: A universal apricot shade developed by an expert makeup artist: Provides a golden glow from the first application, A light gel-cream texture that blends perfectly with the skin, Specially designed to revive blurred complexions and restore their radiance."
+      ],
+      "eco_conception": {
+        "tube": "95% recycled aluminum tube, infinitely recyclable",
+        "co2_emissions": "-60% CO2 emissions*",
+        "packaging": "Recyclable cardboard case, FSC certified and sourced from eco-managed forests. Made in France",
+        "life_cycle_assessment": "Life Cycle Assessment (LCA) data conducted according to ISO14040 and 14044 standards for a 25x105mm tube made of recycled aluminum."
+      },
+      "ingredients": [
+        "Oxygenating Nasturtium Flower: Boosts oxygen distribution to revitalize tired skin.",
+        "Hyaluronic Acid: Designed for optimal absorption and long-lasting hydration thanks to its adapted molecular weight."
+      ],
+      "usage": [
+        "Apply to the face and eye contour for moisturized skin and an immediate glow. Ideal as a makeup base for skin seeking a natural healthy glow and an even complexion. Suitable for all skin types, including sensitive skin."
+      ],
+      "dermatologically_tested": "Tolerance tested under dermatological control."
+    }
+  },
+  {
+    "product": {
+      "title": "Concealer Correcting Care - Pink - For all Skin Types",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Artist Secret",
+      "size": "0.27 fl.oz.",
+      "price": "$25.00",
+      "benefits": [
+        "Combining skincare with makeup, this concealer immediately camouflages dark circles, unifies the under-eye skin color, and erases signs of fatigue.",
+        "Eye bags are reduced, wrinkles are smoothed, and dark circles are less visible.",
+        "Its soft and melting texture provides a long-lasting natural result without a mask-like effect. The eye contour is fresh and rested.",
+        "Instantly conceals dark circles and puffiness",
+        "Natural result, without a mask-like effect",
+        "Erases signs of fatigue",
+        "The surface of the dark circles is reduced",
+        "The bags under the eyes are less visible"
+      ],
+      "eco_conception": {
+        "tube": "Recyclable tube. Made with 50% recycled plastic, which helps preserve natural resources.",
+        "packaging": "FSC certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+      },
+      "ingredients": [
+        "Fraxinus excelsior extract, vitamin B3, and vitamin E derivative: anti-puffiness and anti-dark circles actions",
+        "Film-forming agent of natural origin: anti-wrinkles action",
+        "Glycerin: moisturizing action",
+        "Fragrance-free",
+        "94% ingredients from natural origin"
+      ],
+      "usage": [
+        "Apply to the eye area and gently pat and blend with fingertips.",
+        "Add more product until the desired coverage is reached."
+      ],
+      "ingredients_list": [
+        "AQUA (WATER)",
+        "COCO-CAPRYLATE/CAPRATE",
+        "GLYCERIN",
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "POLYGLYCERYL-6 POLYRICINOLEATE",
+        "DISTARCH PHOSPHATE",
+        "BUTYLENE GLYCOL",
+        "POLYGLYCERYL-4 ISOSTEARATE",
+        "NIACINAMIDE",
+        "RICINUS COMMUNIS ROOT EXTRACT",
+        "MAGNESIUM SULFATE",
+        "POLYHYDROXYSTEARIC ACID",
+        "TOCOPHERYL ACETATE",
+        "LEVULINIC ACID",
+        "FRAXINUS EXCELSIOR BARK EXTRACT",
+        "P-ANISIC ACID",
+        "SODIUM LEVULINATE",
+        "STEARALKONIUM HECTORITE",
+        "SODIUM HYDROXIDE",
+        "GLYCOLIC ACID",
+        "PROPYLENE CARBONATE",
+        "SILANETRIOL",
+        "BIOSACCHARIDE GUM-1",
+        "GLYCERYL CAPRYLATE",
+        "ISOSTEARIC ACID",
+        "+/- (MAY CONTAIN): CI 77891 (TITANIUM DIOXIDE)",
+        "CI 77492 (IRON OXIDES)",
+        "CI 77491 (IRON OXIDES)",
+        "CI 77499 (IRON OXIDES)"
+      ]
+    }
+  }
+,
+
+  {
+    "product": {
+      "title": "Radiant Eye Stick - Cool Treatment For A Brighter Look",
+      "size": "0.15 oz",
+      "price": "$25.00",
+      "seo_title": "Radiant Eye Stick - Cool Treatment For A Brighter Look | EMBRYOLISSE Skincare",
+      "seo_description": "Radiant Eye Stick double action cool-effect stick combines beauty and skincare. A magical burst of radiance that relaxes, reduces dark circles and puffiness, and makes the eyes sparkle. Its small size fits the eye contour perfectly.",
+      "benefits": [
+        "Instant relaxing feeling of freshness and well-being",
+        "Blurred signs of fatigue",
+        "Reduced dark circles and puffiness"
+      ],
+      "eco_conception": {
+        "stick": "Recyclable stick.",
+        "packaging": "FSC-certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC-certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+      },
+      "ingredients": [
+        "An anti-fatigue active ingredient rich in vitamin PP and polysaccharides",
+        "Patented complex of natural sugar derivatives: moisturizing",
+        "Organic aloe vera and glycerin: moisturizing",
+        "Fragrance-free",
+        "99% ingredients from natural origin"
+      ],
+      "ingredients_list": [
+        "AQUA (WATER)",
+        "SODIUM STEARATE",
+        "GLYCERIN",
+        "XYLITYLGLUCOSIDE",
+        "ANHYDROXYLITOL",
+        "PENTYLENE GLYCOL",
+        "XYLITOL",
+        "CAPRYLYL GLYCOL",
+        "SACCHAROMYCES CEREVISIAE EXTRACT",
+        "ALOE BARBADENSIS LEAF JUICE POWDER",
+        "O-CYMEN-5-OL",
+        "1,2-HEXANEDIOL"
+      ],
+      "usage": [
+        "Massage the eye contour with the stick several times, going from the inner corner of the eye to the outer corner, on the upper and lower eyelids."
+      ]
+    }
+  },
+  {
+    "product": {
+      "title": "Beauty Oil",
+      "price": "$30.00",
+      "seo_title": "Beauty Oil - The Marvel skincare for Face, Body and Hair - Embryolisse",
+      "seo_description": "Moisturizing and nourishing, Beauty Oil by Embryolisse combines the powers of 4 active vegetable oils. The best of French pharmacy.",
+      "benefits": [
+        "Hair and skin are hydrated, nourished and enhanced",
+        "Skin is more supple and toned"
+      ],
+      "eco_conception": {
+        "packaging": "Recycle glass bottle and cap."
+      },
+      "ingredients": [
+        "Apricot oil: nourishing and softening",
+        "Pomegranate oil: hydrating and regenerating",
+        "Shea oil: protective and film-forming",
+        "Lemon oil: anti-dehydration and softening",
+        "98% ingredients from natural origin"
+      ],
+      "ingredients_list": [
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "PROPANEDIOL DICAPRYLATE",
+        "DICAPRYLYL ETHER",
+        "BUTYROSPERMUM PARKII (SHEA) BUTTER EXTRACT",
+        "PRUNUS ARMENIACA (APRICOT) KERNEL OIL",
+        "PARFUM (FRAGRANCE)",
+        "PUNICA GRANATUM SEED OIL",
+        "TOCOPHEROL",
+        "HELIANTHUS ANNUUS (SUNFLOWER) SEED OIL",
+        "LIMONENE",
+        "CITRUS LIMON (LEMON) FRUIT EXTRACT",
+        "HYDROXYCITRONELLAL",
+        "LINALOOL"
+      ],
+      "usage": [
+        "On the FACE, as a daily treatment, apply a few drops alone or mixed with a day or night cream for nourishing and protective action.",
+        "On the BODY: to enhance tanning and give the skin a satin finish, apply morning and evening directly to the body through massages, focusing on the driest areas: legs, lower back, back of the arms, and thighs.",
+        "For HAND care, gently warm the oil and massage it into the hands in the evening before bedtime.",
+        "As a HAIR treatment, apply one or two drops in the morning and evening to the ends of the hair before styling to protect them from friction and dryness."
+      ]
+    }
+  }
+,
+{
+  "product": {
+    "title": "Exfoliating Milk Powder",
+    "seo_title": "Exfoliating Milk Powder | Embryolisse USA",
+    "faq": [
+      {
+        "question": "I have sensitive skin, can I use it?",
+        "answer": "Yes, this unique powdered exfoliating treatment is suitable for all skin types. Excellent skin tolerance has been proven after testing on 100% of sensitive skin."
+      },
+      {
+        "question": "How long can this product be stored?",
+        "answer": "You can store the Exfoliating Powder for 9 months after opening."
+      },
+      {
+        "question": "How to use the Exfoliating Milk Powder?",
+        "answer": "1. Pour a small amount of the product into the palm of your hand. 2. You have several options: you can add a few drops of water or mix it with your other Embryolisse products for a customized experience."
+      }
+    ],
+    "benefits": [
+      "The best of the coconut in a water-free powder, in a gentle formula of natural origin and more responsible with 3 coconut extracts. - For a baby skin look.",
+      "With Plant-based foaming agent: Envelops the skin in a milky cloud slightly foaming but ultra-soft and effective for cleansing the skin.",
+      "Sulfate free - Preservative-free - Labelled allergen-free",
+      "Tested on 100% sensitive skin"
+    ],
+    "eco_conception": {
+      "packaging": "Infinitely recyclable aluminum bottle."
+    },
+    "ingredients": [
+      "Micronized coconut shell: Gently exfoliates. Stimulates skin renewal.",
+      "Micronized coconut pulp: Tones the skin by providing a film-firming action.",
+      "Natural coconut fragrance.",
+      "Coconut milk powder: Smooths. Upon contact with water, it envelops the skin in a milky cloud.",
+      "99% ingredients from natural origin"
+    ],
+    "ingredients_list": [
+      "ORYZA SATIVA (RICE) STARCH",
+      "ZEA MAYS (CORN) STARCH",
+      "SODIUM LAUROYL GLUTAMATE",
+      "COCOS NUCIFERA (COCONUT) FRUIT POWDER",
+      "COCOS NUCIFERA (COCONUT) SHELL POWDER",
+      "CITRIC ACID",
+      "CALCIUM CARBONATE",
+      "SODIUM BICARBONATE",
+      "MALTODEXTRIN",
+      "PARFUM (FRAGRANCE)",
+      "COCOS NUCIFERA (COCONUT) FRUIT EXTRACT"
+    ],
+    "usage": [
+      "For a foaming exfoliation: Mix a small amount of powder with a few drops of water in the palm of your hand, massage onto the face, then rinse with water. Use 2 or 3 times a week. Avoid contact with the eyes. In case of contact, rinse thoroughly with clear water.",
+      "You can also combine the Exfoliating Milk Powder with other Embryolisse products, such as the Lait-Crème Concentré or the Eau Active, for a personalized usage that meets the needs of each skin type."
+    ]
+  }
+},
+{
+  "product": {
+    "title": "Gentle Waterproof Make-up Remover Milk",
+    "benefits": [
+      "Removes even long-lasting/waterproof make-up",
+      "Moisturizes durably",
+      "Soothes even the most sensitive skin",
+      "Cleanses gently"
+    ],
+    "eco_conception": {
+      "packaging": "Recycled bottle and cap."
+    },
+    "ingredients": [
+      "Aloe vera: moisturizing",
+      "Patagonia root: soothing",
+      "Fragrance-free",
+      "95% ingredients from natural origin"
+    ],
+    "ingredients_list": [
+      "AQUA (WATER)",
+      "COCO-CAPRYLATE/ CAPRATE",
+      "ETHYLHEXYL STEARATE",
+      "GLYCERIN",
+      "BUTYLENE GLYCOL",
+      "POLYGLYCERYL-6 DISTEARATE",
+      "CETYL ALCOHOL",
+      "SCLEROTIUM GUM",
+      "HYDROXYACETOPHENONE",
+      "SODIUM STEAROYL GLUTAMATE",
+      "JOJOBA ESTERS",
+      "CITRIC ACID",
+      "1,2-HEXANEDIOL",
+      "CAPRYLYL GLYCOL",
+      "POLYGLYCERYL-3 BEESWAX",
+      "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+      "CERA ALBA (BEESWAX)",
+      "BOERHAVIA DIFFUSA ROOT EXTRACT",
+      "HYDROLYZED SOY PROTEIN",
+      "CAPRYLIC/ CAPRIC TRIGLYCERIDE",
+      "ALOE BARBADENSIS LEAF EXTRACT"
+    ],
+    "usage": [
+      "Apply with a cotton pad or fingertips to the face, eyes, and neck.",
+      "Remove with a cotton pad or rinse with water as preferred."
+    ]
+  }
+}
+,
+{
+  "product": {
+    "title": "Foaming Cream Milk - Face and Body Cleanser",
+    "benefits": [
+      "Supple, soft and comfortable skin"
+    ],
+    "eco_conception": {
+      "packaging": "Recycle Tube"
+    },
+    "ingredients": [
+      "Prickly Pear extract: regenerating and moisturizing",
+      "Bio-lipid complex: protective",
+      "Glycerin: moisturizing"
+    ],
+    "ingredients_list": [
+      "AQUA (WATER)",
+      "SODIUM LAURETH SULFATE",
+      "GLYCOL DISTEARATE",
+      "COCAMIDOPROPYL BETAINE",
+      "COCO-GLUCOSIDE",
+      "ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER",
+      "PHENOXYETHANOL",
+      "PARFUM (FRAGRANCE)",
+      "GLYCERIN",
+      "SODIUM BENZOATE",
+      "PHOSPHOLOPIDS",
+      "GLYCINE SOJA (SOYBEAN) OIL",
+      "SODIUM HYDROXIDE",
+      "POTASSIUM SORBATE",
+      "ETHYLHEXYLGLYCERIN",
+      "GLYCOLIPIDS",
+      "CITRIC ACID",
+      "OPUNTIA FICUS-INDICA STEM EXTRACT",
+      "GLYCINE SOJA (SOYBEAN) STEROL"
+    ],
+    "usage": [
+      "Morning or evening: apply to damp face and/or body.",
+      "Massage, rinse and dry off skin."
+    ]
+  }
+},
+{
+  "product": {
+    "title": "Micellar Lotion - Cleansing and Make-up Remover",
+    "vendor": "EMBRYOLISSE",
+    "benefits": [
+      "Removes makeup, impurities, and daily pollution",
+      "Soothed, soft, and toned skin"
+    ],
+    "eco_conception": {
+      "packaging": "Recycle bottle and cap"
+    },
+    "ingredients": [
+      "Cornflower water: soothing",
+      "Chamomile water: softening",
+      "Witch Hazel water: astringent",
+      "Glycerin: softening",
+      "Micellar cleansing agents"
+    ],
+    "ingredients_list": [
+      "AQUA (WATER)",
+      "GLYCERIN",
+      "PEG-6 CAPRYLIC/CAPRIC GLYCERIDES",
+      "POLYSORBATE 20",
+      "ANTHEMIS NOBILIS FLOWER WATER",
+      "CENTAUREA CYANUS FLOWER WATER",
+      "HAMAMELIS VIRGINIANA (WITCH HAZEL) LEAF WATER",
+      "DISODIUM EDTA",
+      "CETRIMONIUM BROMIDE",
+      "PARFUM (FRAGRANCE)",
+      "CITRIC ACID",
+      "SODIUM HYDROXIDE",
+      "SODIUM BENZOATE",
+      "POTASSIUM SORBATE"
+    ],
+    "usage": [
+      "Apply a cotton pad soaked in Micellar Lotion to the skin.",
+      "Reapply until the skin is thoroughly cleansed.",
+      "Use a different cotton pad for each eye.",
+      "Gently pat dry."
+    ]
+  }
+},
+{
+  "product": {
+    "title": "Eau de Beaute Rosamelis - Face Toner For All Skin Types",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Cleansers & Make-Up Removers",
+    "benefits": [
+      "Fresh and radiant complexion"
+    ],
+    "eco_conception": {
+      "packaging": "Recycle bottle, pump and cap"
+    },
+    "ingredients": [
+      "Organic rose and cornflower waters: softening and refreshing",
+      "Organic orange blossom water: toning",
+      "Organic witch hazel water: astringent"
+    ],
+    "ingredients_list": [
+      "AQUA (WATER)",
+      "ROSA DAMASCENA FLOWER WATER",
+      "GLYCERIN",
+      "CENTAUREA CYANUS FLOWER WATER",
+      "CITRUS AURANTIUM AMARA (BITTER ORANGE) FLOWER WATER",
+      "HAMAMELIS VIRGINIANA (WITCH HAZEL) LEAF WATER",
+      "PPG-26-BUTETH-26",
+      "CETRIMONIUM BROMIDE",
+      "LACTIC ACID",
+      "PEG-40 HYDROGENATED CASTOR OIL",
+      "PARFUM (FRAGRANCE)",
+      "CITRIC ACID",
+      "SODIUM BENZOATE",
+      "POTASSIUM SORBATE",
+      "SODIUM HYDROXIDE"
+    ],
+    "usage": [
+      "Morning: Use in the morning as a refreshing mist and/or to set make-up.",
+      "Evening: Use in the evening as toning lotion after Gentle Waterproof Make-up Remover Milk to complete the make-up removal and cleansing routine."
+    ]
+  }
+},
+{
+  "product": {
+    "title": "Lait-Crème Fluid+ Eco-Refill",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Lait-Crème",
+    "size": "13.52 Fl.oz",
+    "questions": [
+      {
+        "question": "Is it possible to refill the LCF+ bottle multiple times without compromising the quality of the product?",
+        "answer": "Absolutely, stability tests have been conducted to ensure that the LCF+ formula maintains its quality and effectiveness. The LCF+ formula is not affected by the reuse of the bottle."
+      },
+      {
+        "question": "Does the LCF+ bottle need to be washed between refills?",
+        "answer": "Cleaning the LCF+ bottle between refills is not recommended. Our formula is designed to ensure optimal quality without the need to clean the bottle. Washing could affect the integrity of the formula."
+      }
+    ],
+    "benefits": [
+      "Introducing Eco-Refill For Your Lait-Crème Fluid+",
+      "A Sustainable Choice for Nourished Skin",
+      "Hydrates and Nourishes",
+      "Enrich and Protect",
+      "Lightweight and Versatile",
+      "Suitable for All Skin Types",
+      "Year-round hydration for All Climates"
+    ],
+    "eco_conception": {
+      "packaging": "Refill, Replenish, Rejoice! Eco-Refill: Recyclable and with -64% less plastic",
+      "origin": "Proudly Made in France",
+      "sustainability": "Reduced Plastic Waste, Recyclable Packaging, Cost Effective"
+    },
+    "ingredients": [
+      "Organic Aloe Vera: A soothing elixir renowned for its restorative powers",
+      "Beeswax: Nature's protective shield",
+      "Shea Butter: A rich source of nourishing emollients"
+    ],
+    "ingredients_list": [
+      "AQUA (WATER)",
+      "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+      "OCTYLDODECANOL",
+      "GLYCERIN",
+      "CETEARYL GLUCOSIDE",
+      "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+      "CERA ALBA (BEESWAX)",
+      "SORBITAN OLIVATE",
+      "ALOE BARBADENSIS LEAF JUICE POWDER",
+      "XANTHAN GUM",
+      "PARFUM (FRAGRANCE)",
+      "1,2-HEXANEDIOL",
+      "CAPRYLYL GLYCOL",
+      "CETEARYL ALCOHOL",
+      "ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER",
+      "SODIUM HYDROXIDE",
+      "HYDROLYZED SOY PROTEIN",
+      "TOCOPHEROL",
+      "TROPOLONE",
+      "GLYCINE SOJA (SOYBEAN) OIL"
+    ],
+    "usage": [
+      "Generously apply Lait-Crème Fluid+ to your face and body.",
+      "Massage into your skin and allow it to absorb.",
+      "Use as a moisturizer, makeup base, cleanser, makeup remover, after-sun soother, or aftershave relief."
+    ]
+  }
+}
+,
+  {
+    "product": {
+      "title": "Lait-Crème Sensitive - Fragrance Free",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Lait-Crème",
+      "size": "3.38 Fl.oz",
+      "price": "$32.00",
+      "questions": [
+        {
+          "question": "Can I use Lait-Crème Sensitive on my baby?",
+          "answer": "Yes, Lait-Crème Sensitive is gentle enough for babies' skin and is 100% dermatologically controlled, with 100% of parents confirming it soothes and protects their baby's fragile skin."
+        },
+        {
+          "question": "Is this product suitable for extremely dry skin?",
+          "answer": "Yes, Lait-Crème Sensitive provides deep hydration, improving the skin's suppleness and elasticity, and helps reduce the signs of dryness by up to 89%."
+        }
+      ],
+      "benefits": [
+        "Moisturized skin regains suppleness and elasticity",
+        "Plumped, smooth, and soft skin",
+        "Consistently soothes hypersensitive skin",
+        "Reduces skin sensitivity",
+        "Provides an immediate feeling of comfort"
+      ],
+      "results": [
+        "Nourishes face and body skin, reducing signs of dryness – 89%*",
+        "Face and body skin are immediately and durably moisturized – 87%*",
+        "Calms/soothes feelings of discomfort, tightness, irritation, and redness – 88%**",
+        "Protects the skin from external aggressions – 84%*",
+        "Skin regains its suppleness and elasticity – 94%**",
+        "Soothes baby's/child's fragile skin – 100%***"
+      ],
+      "eco_conception": {
+        "message": "Infinitely recyclable aluminum tube and FSC-certified cardboard packaging.",
+        "sustainability_impact": "By using FSC-certified cardboard, Embryolisse supports sustainable forest management, protecting both nature and people."
+      },
+      "ingredients": [
+        "Aloe Vera: Moisturizing and soothing",
+        "Soy Proteins: Moisturizing",
+        "Shea Butter: Nourishing and softening",
+        "Beeswax: Protective",
+        "Vegetable Oils: Provide suppleness and elasticity"
+      ],
+      "ingredients_list": [
+        "AQUA (WATER)",
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "GLYCERIN",
+        "OCTYLDODECANOL",
+        "POLYGLYCERYL-3 METHYLGLUCOSE DISTEARATE",
+        "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+        "CERA ALBA (BEESWAX)",
+        "JOJOBA ESTERS",
+        "HELIANTHUS ANNUUS (SUNFLOWER) SEED WAX",
+        "GLYCERYL STEARATE",
+        "XANTHAN GUM",
+        "1,2-HEXANEDIOL",
+        "CAPRYLYL GLYCOL",
+        "SODIUM HYDROXIDE",
+        "ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER",
+        "POLYGLYCERIN-3",
+        "ACACIA DECURRENS FLOWER WAX",
+        "ALOE BARBADENSIS LEAF JUICE POWDER",
+        "TOCOPHEROL",
+        "TROPOLONE",
+        "GLYCINE SOJA (SOYBEAN) OIL",
+        "HYDROLYZED SOY PROTEIN"
+      ],
+      "usage": [
+        "Moisturizing cream",
+        "Moisturizing mask",
+        "Make-up base",
+        "Skincare for babies",
+        "Cleanser & make-up remover",
+        "After-shave cream",
+        "Body cream"
+      ]
+    }
+  }
+,
+
+
+{
+  "product": {
+    "title": "Lait-Crème Fluid+",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Lait-Crème",
+    "size": "13.52 Fl.oz",
+    "price": "$36.00",
+    "seo_title": "Lait Creme Fluid+ | Daily Face and Body Lotion | EMBRYOLISSE Skincare",
+    "benefits": [
+      "Intensive Hydration: Delivers immediate and sustained moisture to your face, banishing dryness and promoting a supple, radiant complexion.",
+      "Body Nourishment: Acts as a body moisturizer, providing rich nourishment without the unwanted greasy after-feel, facilitating swift absorption.",
+      "Makeup Primer: Serves as a premium makeup base, smoothing your skin to perfection, ensuring a flawless, enduring makeup application.",
+      "Cleanser & Makeup Remover: A dual-action cleanser that gently purges impurities and removes makeup while preserving the skin's natural balance.",
+      "After-Sun Solution: Offers a soothing touch after sun exposure, replenishing moisture and soothing your skin for instant relief.",
+      "After-Shave Care: Specifically formulated to soothe post-shaving irritations and visibly reduce redness, restoring comfort to your skin."
+    ],
+    "ecoconception": {
+      "message": "100% recycled plastic bottle (except for dyes) upholds a commitment to the environment, both recyclable and refillable."
+    },
+    "ingredients": [
+      "Shea Butter: Nourishing and softening",
+      "Beeswax: Helps protect the skin barrier",
+      "Organic Aloe Vera: Helps repair the skin"
+    ],
+    "ingredients_list": [
+      "AQUA (WATER)",
+      "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+      "OCTYLDODECANOL",
+      "GLYCERIN",
+      "CETEARYL GLUCOSIDE",
+      "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+      "CERA ALBA (BEESWAX)",
+      "SORBITAN OLIVATE",
+      "ALOE BARBADENSIS LEAF JUICE POWDER",
+      "XANTHAN GUM",
+      "PARFUM"
+    ],
+    "questions": [
+      {
+        "question": "I have sensitive skin, can I use it?",
+        "answer": "Lait-Crème Fluid+ is suitable for all skin types. Excellent skin tolerance was observed after testing on 100% of sensitive skin."
+      }
+    ],
+    "usage": [
+      "Use Lait-Crème Fluid+ as a moisturizer, makeup base, cleanser, makeup remover, after-sun soother, or aftershave relief."
+    ]
+  }
+}
+,
+
+  {
+    "product": {
+      "title": "Lait-Crème Sensitive - Fragrance Free",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Lait-Crème",
+      "size": "3.38 Fl.oz",
+      "price": "$32.00",
+      "seo_title": "Lait-Crème Sensitive - Fragrance Free | Embryolisse USA",
+      "seo_description": "Lait-Crème Sensitive shares the same properties as Lait-Crème Concentré but in a new, fragrance-free, odorless, hypoallergenic formula. Suitable for sensitive skin.",
+      "benefits": [
+        "Plumped, smooth, and soft skin",
+        "Consistently soothes hypersensitive skin",
+        "Reduces skin sensitivity",
+        "Provides an immediate feeling of comfort"
+      ],
+      "results": [
+        "Nourishes face and body skin and reduces signs of dryness – 89%*",
+        "Face and body skin are immediately and durably moisturized – 87%*",
+        "The product calms/soothes feelings of discomfort, tightness, skin irritation, and redness – 88%**",
+        "The product protects the skin from external aggressions – 84%*",
+        "Skin regains its suppleness and elasticity – 94%**",
+        "The product calms and soothes my baby's/child's fragile skin – 100%***"
+      ],
+      "ecoconception": {
+        "message": "Infinitely recyclable aluminum tube. Cardboard packaging, FSC certified, recyclable, and sourced from sustainably managed forests."
+      },
+      "ingredients": [
+        "Aloe Vera: Moisturizing and soothing",
+        "Soy Proteins: Moisturizing",
+        "Shea Butter: Nourishing and softening",
+        "Beeswax: Protective",
+        "Emollient Oils of Vegetable Origin: Provide suppleness and elasticity"
+      ],
+      "ingredients_list": [
+        "AQUA (WATER)",
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "GLYCERIN",
+        "OCTYLDODECANOL",
+        "POLYGLYCERYL-3 METHYLGLUCOSE DISTEARATE",
+        "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+        "CERA ALBA (BEESWAX)",
+        "JOJOBA ESTERS",
+        "HELIANTHUS ANNUUS (SUNFLOWER) SEED WAX",
+        "GLYCERYL STEARATE",
+        "XANTHAN GUM",
+        "1,2-HEXANEDIOL",
+        "CAPRYLYL GLYCOL",
+        "SODIUM HYDROXIDE",
+        "ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER",
+        "POLYGLYCERIN-3",
+        "ACACIA DECURRENS FLOWER WAX",
+        "ALOE BARBADENSIS LEAF JUICE POWDER",
+        "TOCOPHEROL",
+        "TROPOLONE",
+        "GLYCINE SOJA (SOYBEAN) OIL",
+        "HYDROLYZED SOY PROTEIN"
+      ],
+      "usage": [
+        "Moisturizing cream",
+        "Moisturizing mask",
+        "Make-up base",
+        "Skincare for babies",
+        "Cleanser & make-up remover",
+        "After-shave cream",
+        "Body cream"
+      ]
+    }
+  },
+  {
+    "product": {
+      "title": "Lait-Crème Concentré - Daily Face and Body Cream",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Lait-Crème",
+      "size": "2.54 Fl.oz",
+      "price": "$29.00",
+      "seo_title": "Lait Crème Concentré - #1 Moisturizer | Embryolisse USA",
+      "seo_description": "Lait Crème Concentré is so popular that one is sold every 20 seconds around the world. Effective for sensitive skin and highly tolerant.",
+      "faq": [
+        {
+          "question": "Is this cream non-comedogenic?",
+          "answer": "Yes, it is non-comedogenic, no need to worry about that!"
+        },
+        {
+          "question": "How long can the Lait-Crème Concentré be stored?",
+          "answer": "You can store it for 12 months after opening. You will also find the expiration date of your product indicated on the box and the tube."
+        },
+        {
+          "question": "Is the Lait Crème Concentré also a makeup base?",
+          "answer": "The Lait-Crème Concentré can indeed be used as a makeup base. This use has been tested, and 100% of women confirm that it is a good makeup base."
+        }
+      ],
+      "benefits": [
+        "Supple and firm skin",
+        "Plumped up, smooth, soft, and toned skin",
+        "Skin perfectly prepared for make-up"
+      ],
+      "main_active_ingredients": [
+        "Shea butter: nourishing and softening",
+        "Beeswax: Protective",
+        "Aloe vera: moisturizing and soothing",
+        "Soy proteins: moisturizing"
+      ],
+      "ecoconception": {
+        "message": "Infinitely recyclable aluminum tube. For our packaging, we prioritize aluminum for several reasons. It is a very light and resistant material that best protects the formula against oxidation. An aluminum tube also allows the product to be used easily and to the very last drop. A material that is all good since it is also infinitely recyclable! FSC certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+      },
+      "ingredients": [
+        "AQUA (WATER)",
+        "PARAFFINUM LIQUIDUM",
+        "STEARIC ACID",
+        "PALMITIC ACID",
+        "GLYCERYL STEARATE SE",
+        "TRIETHANOLAMINE",
+        "CERA ALBA (BEESWAX)",
+        "CETYL PALMITATE",
+        "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+        "1,2 HEXANEDIOL",
+        "CAPRYLYL GLYCOL",
+        "STEARETH-10",
+        "POLYACRYLAMIDE",
+        "C13-14 ISOPARAFFIN",
+        "PARFUM (FRAGRANCE)",
+        "LAURETH-7",
+        "PROPYLENE GLYCOL",
+        "TROPOLONE",
+        "HYDROLYZED SOY PROTEIN",
+        "ALOE BARBADENSIS LEAF EXTRACT"
+      ],
+      "usage": [
+        "As a moisturizing cream or make-up base, spread a small dab onto thoroughly cleansed and dry skin.",
+        "Apply a more generous amount for use as cleansing and make-up removal lotion.",
+        "As a mask, apply a thick layer to skin 1 to 2 times a week and leave on for 10 to 15 minutes."
+      ],
+      "suitable_for_skin_type": "all-skin-types"
+    }
+  },
+  {
+    "product": {
+      "title": "Hydra Cream Energizing",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Moisturizers",
+      "size": "1.35 Fl.oz",
+      "price": "$29.00",
+      "seo_title": "Hydra-Cream Energizing | Embryolisse USA",
+      "seo_description": "Hydra Cream Energizing revitalizing moisturizer is infused with vitamin C and purple ginseng extract, working in synergy to energize and replenish your skin, leaving it feeling refreshed and radiant.",
+      "benefits": [
+        "Instant Hydration: A surge of moisture quenches dry skin, leaving it supple and comfortable throughout the day.",
+        "Vitamin C Boost: Vitamin C, a potent antioxidant, brightens the complexion, evens skin tone, and protects against free radical damage.",
+        "Revitalizing Energy: Violet ginseng extract invigorates the skin, promoting a healthy, glowing appearance.",
+        "Antioxidant Shield: The formula's antioxidant properties combat environmental aggressors, keeping your skin protected from pollution and other external stressors.",
+        "Luminous Glow: Experience an instant radiance boost, revealing a healthy, lit-from-within glow."
+      ],
+      "ecoconception": {
+        "message": "Tube made with 95% recycled and infinitely recyclable aluminum. -60% CO2 emissions. Recyclable cardboard case made from sustainably managed forests. LCA data carried out according to ISO14040 and 14044 standards for a 25x105mm recycled aluminum tube."
+      },
+      "main_ingredients": [
+        "Enhanced Vitamin C: A unique combination of plant-based vitamin C (from sea buckthorn) and stabilized vitamin C that provides antioxidant action to protect the skin from premature aging.",
+        "Purple Ginseng: Stimulating active ingredient derived from the root, rich in antioxidant polyphenols.",
+        "Vegetable Glycerin: Promotes immediate and long-lasting hydration."
+      ],
+      "ingredients": [
+        "AQUA (WATER)",
+        "GLYCERIN",
+        "DICAPRYLYL ETHER",
+        "PRUNUS AMYGDALUS DULCIS (SWEET ALMOND) OIL",
+        "MYRISTYL MYRISTATE",
+        "EUPHORBIA CERIFERA CERA (CANDELILLA WAX)",
+        "DIPENTAERYTHRITYL HEXACAPRYLATE/HEXACAPRATE",
+        "CETEARYL GLUCOSIDE",
+        "SORBITAN OLIVATE",
+        "ILLITE",
+        "SCLEROTIUM GUM",
+        "TOCOPHERYL ACETATE",
+        "GLYCERYL STEARATE",
+        "SODIUM ACRYLATES COPOLYMER",
+        "PARFUM (FRAGRANCE)",
+        "CITRIC ACID",
+        "SODIUM STEAROYL GLUTAMATE",
+        "1,2-HEXANEDIOL",
+        "CAPRYLYL GLYCOL",
+        "CI 15510 (ORANGE 4)",
+        "SODIUM BENZOATE",
+        "CETEARYL ALCOHOL",
+        "ALCOHOL",
+        "LECITHIN",
+        "POLYGONUM BISTORTA ROOT EXTRACT",
+        "TOCOPHEROL",
+        "HELIANTHUS ANNUUS (SUNFLOWER) SEED OIL",
+        "GLYCERIN"
+      ],
+      "usage": [
+        "Cleanse and dry the face.",
+        "Apply a generous amount in the morning and evening, massaging gently into the face and neck until absorbed.",
+        "For additional hydration, use as a makeup base or revitalizing mask."
+      ]
+    }
+  }
+,
+
+
+  {
+    "product": {
+      "title": "Intense Moisturizing Mask",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Moisturizers",
+      "size": "1.69 fl.oz.",
+      "price": "$25.00",
+      "seo_title": "Intense Moisturizing Mask | EMBRYOLISSE Skincare",
+      "seo_description": "Intense Moisturizing Mask with 97% ingredients from natural origin hydration booster for thirsty skin. For all skin types and sensitive skin. Fresh jelly with white nymphaea. Vegan formula. Recyclable aluminum tube and packaging. Made in France. New Look - Same formula.",
+      "faq": [
+        {
+          "question": "Why a jelly texture and not a creamy texture?",
+          "answer": "The gel texture penetrates better than cream and immediately delivers a burst of freshness to the skin. Therefore, it is ideal for providing intense hydration and an ultra-fresh complexion."
+        },
+        {
+          "question": "What is the secret to the effectiveness of the Intense Hydration Mask?",
+          "answer": "Its secret lies in its essential formulation combined with an ultra-penetrating texture. Its three super complementary active ingredients of natural origin will provide long-lasting hydration: white water lily extract, which improves water circulation within the cells; hyaluronic acid, which retains water; and marine water, rich in minerals, which provides the skin with Natural Moisturizing Factors (NMFs) capable of locking water inside."
+        },
+        {
+          "question": "I have sensitive skin, can I use it?",
+          "answer": "Yes, the formula of the Intense Hydration Mask is suitable for all skin types."
+        }
+      ],
+      "benefits": [
+        "Immediately moisturized and plumped up skin",
+        "Fresh and radiant complexion"
+      ],
+      "main_active_ingredients": [
+        "White nymphaea: boosts natural hydration mechanisms",
+        "Hyaluronic acid: moisturizing properties, binds and retains water",
+        "Mineral-rich marine water: moisturizing"
+      ],
+      "ecoconception": {
+        "message": "Infinitely recyclable aluminum tube. For our packaging, we prioritize aluminum for several reasons. It is a very light and resistant material that protects the formula against oxidation. An aluminum tube allows the product to be used easily and to the last drop. A material that is all good since it is also infinitely recyclable! FSC-certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC-certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+      },
+      "ingredients": [
+        "AQUA (WATER)",
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "GLYCERIN",
+        "DIISOPROPYL SEBACATE",
+        "CARBOMER",
+        "HYDROXYACETOPHENONE",
+        "PROPANEDIOL",
+        "1,2-HEXANEDIOL",
+        "CAPRYLYL GLYCOL",
+        "SODIUM HYDROXIDE",
+        "PARFUM (FRAGRANCE)",
+        "CITRIC ACID",
+        "SODIUM HYALURONATE",
+        "SODIUM PHYTATE",
+        "HYDROLYZED ALGIN",
+        "NYMPHAEA ALBA FLOWER EXTRACT",
+        "MARIS AQUA (SEA WATER)",
+        "CHLORELLA VULGARIS EXTRACT",
+        "LIMONENE",
+        "CI 42090 (BLUE 1)"
+      ],
+      "usage": [
+        "Apply a thick layer to the face and neck.",
+        "Leave on for 15 minutes.",
+        "Remove by wiping off excess or rinsing off.",
+        "Use 2 to 3 times a week."
+      ]
+    }
+  },
+  {
+    "product": {
+      "title": "Hydra Cream Light - Lightweight active hydration",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Moisturizers",
+      "size": "1.35 Fl.oz.",
+      "price": "$22.00",
+      "seo_title": "Active hydration - Hydra Cream Light | EMBRYOLISSE Skincare",
+      "seo_description": "Enriched with white water lily and hyaluronic acid, Hydra-Cream Light supplies the skin with water and provides intense and active hydration.",
+      "benefits": [
+        "Skin is deeply and continuously moisturized throughout the day",
+        "Soft and supple skin",
+        "Radiant and bright complexion"
+      ],
+      "ecoconception": {
+        "message": "Infinitely recyclable aluminum tube. For our packaging, we prioritize aluminum for several reasons. It is a very light and resistant material that protects the formula against oxidation. An aluminum tube allows the product to be used easily and to the last drop. A material that is all good since it is also infinitely recyclable! FSC-certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC-certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+      },
+      "main_active_ingredients": [
+        "White Nymphaea: boosts natural hydration mechanisms",
+        "Micro Hyaluronic acid: deep, long-lasting hydration",
+        "Macro Hyaluronic acid: epidermal hydration and plumping effect"
+      ],
+      "ingredients": [
+        "AQUA (WATER)",
+        "GLYCERIN",
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "TRIBEHENIN PEG 20 ESTERS",
+        "ISONONYL ISONONANOATE",
+        "MYRISTYL LACTATE",
+        "SODIUM HYALURONATE",
+        "NYMPHAEA ALBA FLOWER EXTRACT",
+        "ACRYLATES/C10 30 ALKYL ACRYLATE CROSSPOLYMER",
+        "PROPANEDIOL",
+        "XANTHAN GUM",
+        "1.2 HEXANEDIOL",
+        "CAPRYLYL GLYCOL",
+        "SODIUM BENZOATE",
+        "SODIUM HYDROXIDE",
+        "PARFUM (FRAGRANCE)",
+        "LIMONENE"
+      ],
+      "usage": [
+        "Apply day and/or night to cleanse and dry skin thoroughly.",
+        "Use after Hydra-Serum for optimal moisture replenishment."
+      ]
+    }
+  }
+,
+{
+  "product": {
+    "title": "Hydra Serum - Hydration Booster",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Moisturizers",
+    "size": "1.01 fl.oz",
+    "price": "$35.00",
+    "seo_title": "Hydra-Serum with two types of hyaluronic acid | EMBRYOLISSE Skincare",
+    "seo_description": "Hydra Serum is an active hydration booster with an ultra-concentrated aqueous texture to revitalize all skin types instantly.",
+    "benefits": [
+      "Long-lasting hydration throughout the day",
+      "Softer, smoother skin",
+      "Refreshed and radiant complexion"
+    ],
+    "ecoconception": {
+      "message": "Glass bottle is recyclable indefinitely. FSC-certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC-certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+    },
+    "main_active_ingredients": [
+      "White Nymphaea: boosts natural hydration mechanisms",
+      "Micro Hyaluronic acid: deep, long-lasting hydration",
+      "Macro Hyaluronic acid: epidermal hydration and plumping effect"
+    ],
+    "ingredients": [
+      "AQUA (WATER)",
+      "GLYCERIN",
+      "PROPANEDIOL",
+      "BUTYLENE GLYCOL",
+      "HYDROGENATED STARCH HYDROLYSATE",
+      "SODIUM ACRYLATES COPOLYMER",
+      "SODIUM HYALURONATE",
+      "NYMPHAEA ALBA FLOWER EXTRACT",
+      "LECITHIN",
+      "BIOSACCHARIDE GUM-2",
+      "POTASSIUM SORBATE",
+      "SODIUM BENZOATE",
+      "SODIUM PHYTATE",
+      "CITRIC ACID",
+      "PARFUM (FRAGRANCE)",
+      "LIMONENE"
+    ],
+    "usage": [
+      "Apply day and/or night to thoroughly cleanse and dry skin.",
+      "Smooth into the entire face.",
+      "Follow up with your regular moisturizer."
+    ]
+  }
+},
+{
+  "product": {
+    "title": "Cicalisse Hands and Nails",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Nourishing Cares",
+    "size": "1.01 fl.oz.",
+    "price": "$12.00",
+    "seo_title": "Cicalisse Hands and Nails | Embryolisse USA",
+    "seo_description": "Formulated with just 10 natural ingredients, Cicalisse Hands and Nails cream is a lifesaver for hands exposed to harsh elements like wind, cold, pollution, and frequent washing. Short, natural, and vegan formula highly concentrated in Shea Butter.",
+    "faq": [
+      {
+        "question": "What is the texture of Cicalisse Hands and Nails cream and how do I apply it?",
+        "answer": "The cream has a rich, creamy texture that absorbs quickly without feeling greasy or sticky. Simply apply a small amount to clean, dry hands and massage until fully absorbed."
+      },
+      {
+        "question": "Is Cicalisse Hands and Nails suitable for sensitive skin?",
+        "answer": "Yes, this cream is suitable for all skin types. Excellent skin tolerance has been proven in tests on 100% of sensitive skin."
+      },
+      {
+        "question": "Does the cream leave a greasy or sticky finish?",
+        "answer": "No, Cicalisse Hands and Nails cream does not leave a greasy or sticky finish. It provides an immediate soft feel with an enveloping and comforting texture."
+      }
+    ],
+    "benefits": [
+      "Repairs very dry, damaged hands and brittle nails.",
+      "Protects hands from harmful effects of wind, cold, pollution, detergents, and repeated washing.",
+      "Strengthens nails and moisturizes cuticles.",
+      "Increases skin suppleness by +107%.",
+      "Enhances nail strength and cuticle moisture by +100%.",
+      "Provides softer skin with a +102% improvement.",
+      "Convenient on-the-go format for easy use anywhere.",
+      "Short, natural, and vegan formula."
+    ],
+    "ecoconception": {
+      "message": "Recyclable tube. Made with 46% recycled plastic, which helps preserve natural resources."
+    },
+    "main_active_ingredients": [
+      "Highly concentrated in Shea Butter: rapidly penetrates skin and nails to repair, protect, and nourish very dry, damaged hands and brittle nails."
+    ],
+    "ingredients": [
+      "AQUA (WATER)",
+      "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+      "PENTYLENE GLYCOL",
+      "GLYCERIN",
+      "SODIUM ACRYLATES COPOLYMER",
+      "PARFUM (FRAGRANCE)",
+      "LECITHIN",
+      "POLYGLYCERYL-3 DIISOSTEARATE",
+      "CITRIC ACID",
+      "O-CYMEN-5-OL"
+    ],
+    "usage": [
+      "Apply several times a day and gently massage into hands and nails."
+    ],
+    "cosmetic_function": [
+      "nourishing",
+      "moisturizing",
+      "hydrating",
+      "protecting",
+      "repairing",
+      "soothing"
+    ],
+    "package_type": "tube",
+    "product_form": "cream",
+    "suitable_for_skin_type": [
+      "all-skin-types",
+      "very-dry"
+    ]
+  }
+},
+{
+  "product": {
+    "title": "Cicalisse - Restorative & Protective Skin Cream - Face, Body, Lip",
+    "vendor": "EMBRYOLISSE",
+    "collections": "Nourishing Cares",
+    "size": "1.35 fl.oz.",
+    "price": "$16.00",
+    "benefits": [
+      "Repaired and regenerated skin",
+      "Reduced feelings of irritations"
+    ],
+    "ecoconception": {
+      "message": "Infinitely recyclable aluminum tube. For our packaging, we prioritize aluminum for several reasons. It is a very light and resistant material that best protects the formula against oxidation. An aluminum tube also allows the product to be used easily and to the very last drop. A material that is all good since it is also infinitely recyclable! FSC certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+    },
+    "main_active_ingredients": [
+      "Acexamic acid: accelerates skin’s repair",
+      "Hyaluronic acid: moisturizing properties, binds and retains water",
+      "Aloe vera: moisturizing and soothing",
+      "Sugars: bind and retain water",
+      "A mix of soft butters (Sweet Almond, Cotton, Apricot): nourishing"
+    ],
+    "ingredients": [
+      "AQUA (WATER)",
+      "CAPRYLIC / CAPRIC TRIGLYCERIDE",
+      "GLYCERIN",
+      "ACETAMIDOCAPROIC ACID",
+      "CETYL ALCOHOL",
+      "GLYCERYL STEARATE",
+      "ALUMINUM STARCH OCTENYLSUCCINATE",
+      "PRUNUS AMYGDALUS DULCIS (SWEET ALMOND) OIL",
+      "AMMONIUM ACRYLOYLDIMETHYLTAURATE / VP COPOLYMER",
+      "ALPHA-GLUCAN OLIGOSACCHARIDE",
+      "GOSSYPIUM HERBACEUM (COTTON) SEED OIL",
+      "PEG-75 STEARATE",
+      "HYDROGENATED SWEET ALMOND OIL",
+      "PRUNUS ARMENIACA (APRICOT) KERNEL OIL",
+      "SODIUM HYDROXIDE",
+      "1.2-HEXANEDIOL",
+      "CAPRYLYL GLYCOL",
+      "HYDROGENATED COTTONSEED OIL",
+      "CETETH-20",
+      "STEARETH-20",
+      "HYDROGENATED APRICOT KERNEL OIL",
+      "SODIUM HYALURONATE",
+      "DISODIUM EDTA",
+      "TOCOPHERYL ACETATE",
+      "CITRIC ACID",
+      "TROPOLONE",
+      "TOCOPHEROL",
+      "SODIUM BENZOATE",
+      "ALOE BARBADENSIS LEAF EXTRACT",
+      "POTASSIUM SORBATE"
+    ],
+    "usage": "Apply to thoroughly cleansed and dry skin, morning and evening."
+  }
+}
+,
+
+  {
+    "product": {
+      "title": "Filaderme Emulsion - Face Lotion For Dry Skin",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Nourishing Cares",
+      "size": "2.54 fl.oz.",
+      "price": "$30.00",
+      "seo_description": "Best seller Filaderme Emulsion intensely nourishes the skin. It is soothed and soft for immediate and sustainable nutrition.",
+      "benefits": [
+        "Immediately and lastingly nourishes and replenishes the skin",
+        "Repairs dry and very dry skin",
+        "Feelings of discomfort disappear"
+      ],
+      "ecoconception": {
+        "message": "Infinitely recyclable aluminum tube. For our packaging, we prioritize aluminum for several reasons. It is a very light and resistant material that best protects the formula against oxidation. An aluminum tube also allows the product to be used easily and to the very last drop. A material that is all good since it is also infinitely recyclable! FSC certified cardboard case, recyclable and sourced from eco-managed forests. By using FSC certified cardboard for its cases, Embryolisse supports forest management that respects people and nature."
+      },
+      "main_active_ingredients": [
+        "Vegetable squalane: protects and strengthens the skin barrier",
+        "Shea butter: nourishing and softening",
+        "Beeswax: protective",
+        "Aloe vera: soothing and moisturizing",
+        "Glycerin and soy proteins: moisturizing"
+      ],
+      "ingredients": [
+        "AQUA (WATER)",
+        "SQUALANE",
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "GLYCERIN",
+        "CETEARYL GLUCOSIDE",
+        "CETEARYL ALCOHOL",
+        "BRASSICA CAMPESTRIS (RAPESEED) STEROLS",
+        "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+        "CERA ALBA (BEESWAX)",
+        "SORBITAN OLIVATE",
+        "XANTHAN GUM",
+        "1,2-HEXANEDIOL",
+        "CAPRYLYL GLYCOL",
+        "PARFUM (FRAGRANCE)",
+        "SODIUM POLYACRYLATE",
+        "CITRIC ACID",
+        "HYDROLYZED SOY PROTEIN",
+        "TROPOLONE",
+        "ALOE BARBADENSIS LEAF EXTRACT"
+      ],
+      "usage": "Apply morning and evening to thoroughly cleansed and dry face and neck. Gently massage into skin, until fully absorbed."
+    }
+  },
+  {
+    "product": {
+      "title": "Protective & Nourishing Lip Balm",
+      "vendor": "EMBRYOLISSE",
+      "collections": "Nourishing Cares",
+      "size": "0.15 oz",
+      "price": "$10.00",
+      "seo_title": "Protective & Nourishing Lip Balm | EMBRYOLISSE Skincare",
+      "seo_description": "The Protective & Nourishing Lip Balm moisturizes, nourishes, protects, and soothes dry and damaged lips with active ingredients of natural origin.",
+      "benefits": [
+        "Smooth and soft lips"
+      ],
+      "ecoconception": {
+        "message": "Recycle Stick."
+      },
+      "main_active_ingredients": [
+        "Shea butter: nourishing and softening",
+        "Carnauba and Beeswax: nourishing and protective",
+        "Apricot, Sweet Almond, and Castor oils: moisturizing and softening",
+        "Edelweiss extract: soothing"
+      ],
+      "ingredients": [
+        "CAPRYLIC/CAPRIC TRIGLYCERIDE",
+        "RICINUS COMMUNIS (CASTOR) SEED OIL",
+        "CERA ALBA (BEESWAX)",
+        "C10-18 TRIGLYCERIDES",
+        "APRICOT KERNEL OIL POLYGLYCERYL-4 ESTERS",
+        "BUTYROSPERMUM PARKII (SHEA) BUTTER",
+        "PRUNUS AMYGDALUS DULCIS (SWEET ALMOND) OIL",
+        "COPERNICIA CERIFERA (CARNAUBA) WAX",
+        "HYDROGENATED CASTOR OIL",
+        "PARFUM (FRAGRANCE)",
+        "TOCOPHERYL ACETATE",
+        "LEONTOPODIUM ALPINUM EXTRACT"
+      ],
+      "usage": "The lip balm can be used as often as needed to protect and soothe painful lips or calm feelings of sore lips. Avoid licking or biting your lips to warm them up, as this will only worsen the chapping."
+    }
+  }
+]

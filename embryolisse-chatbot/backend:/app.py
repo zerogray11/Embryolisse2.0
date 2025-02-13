@@ -3,6 +3,10 @@ import os
 from dotenv import load_dotenv
 import psycopg2
 from flask_cors import CORS
+import numpy as np
+import faiss
+import json
+import requests
 
 # Load environment variables
 load_dotenv()
@@ -11,7 +15,21 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for all routes
-CORS(app, origins=["http://localhost:5173"])  # Allow requests from your React frontend
+CORS(app, origins=["http://localhost:5173"])
+
+# Path to the embeddings and metadata files
+EMBEDDINGS_FILE = "/Users/macbookpro/Desktop/Embryolisse2.0/embryolisse-chatbot/backend:/embeddings.npy"
+METADATA_FILE = "/Users/macbookpro/Desktop/Embryolisse2.0/embryolisse-chatbot/backend:/products_with_metadata.json"
+
+# Load embeddings and product metadata
+embeddings = np.load(EMBEDDINGS_FILE)
+with open(METADATA_FILE, "r") as file:
+    products = json.load(file)
+
+# Initialize FAISS index
+d = embeddings.shape[1]
+index = faiss.IndexFlatL2(d)
+index.add(embeddings)
 
 # Database connection function
 def get_db_connection():
@@ -27,58 +45,45 @@ def get_db_connection():
         print("Database connection error:", e)
         return None
 
-# Knowledge base for general questions
-def handle_general_question(question):
-    knowledge_base = {
-        "what is embryolisse": "Embryolisse is a French skincare brand known for its high-quality, dermatologist-tested products.",
-        "what products do you sell": "We sell a wide range of skincare products, including moisturizers, serums, masks, and more. You can explore our products at https://us.embryolisse.com/.",
-        "where can i buy your products": "You can buy our products online at our official website (https://us.embryolisse.com/) or at authorized retailers.",
-        "do you have products for oily skin": "Yes, we have products specifically formulated for oily skin, such as our Mattifying Moisturizer.",
-        "do you have products for dry skin": "Yes, we have products like the Lait-Crème Concentré that are perfect for dry skin.",
+# Generate embedding for a given text (using OpenAI API)
+def get_embedding(text):
+    """Send text to OpenAI API and return the embedding."""
+    headers = {
+        "Authorization": f"Bearer {os.environ.get('OPENAI_API_KEY')}",
+        "Content-Type": "application/json"
     }
-    question = question.lower()
-    return knowledge_base.get(question, "I'm sorry, I don't have information about that. Can you please ask something else?")
-
-# Function to fetch product recommendations
-def fetch_recommendations(skin_type, skin_condition, age_bracket, additional_filters=None):
-    conditions = []
-    if skin_condition == "hydration":
-        conditions.append("for_winter = TRUE")
-    if skin_condition == "anti-aging":
-        conditions.append("anti_age = TRUE")
-    if skin_condition == "sun protection":
-        conditions.append("for_sun = TRUE")
-    if skin_condition == "winter care":
-        conditions.append("for_winter = TRUE")
-
-    # Apply additional filters if provided
-    if additional_filters:
-        conditions.append(additional_filters)
-
-    # Build the SQL query based on conditions
-    query = "SELECT name, description, image_url FROM products"
-    if conditions:
-        query += " WHERE " + " AND ".join(conditions)
-
-    # Fetch product recommendations from the database
-    conn = get_db_connection()
-    if not conn:
-        return None
-
-    cur = conn.cursor()
+    data = {
+        "input": text,
+        "model": "text-embedding-ada-002"
+    }
     try:
-        cur.execute(query)
-        products = cur.fetchall()
-        if products:
-            return [{"name": p[0], "description": p[1], "image_url": p[2]} for p in products]
-        else:
-            return None
-    except Exception as e:
-        print("Database query error:", e)
+        response = requests.post("https://api.openai.com/v1/embeddings", json=data, headers=headers)
+        response.raise_for_status()
+        return response.json()["data"][0]["embedding"]
+    except requests.exceptions.RequestException as e:
+        print(f"API Request Failed: {e}")
         return None
-    finally:
-        cur.close()
-        conn.close()
+
+# Function to find the most similar product using FAISS
+def get_most_similar_product(user_input_embedding, category=None):
+    try:
+        user_input_embedding = np.array(user_input_embedding).reshape(1, -1).astype('float32')
+        _, indices = index.search(user_input_embedding, 1)
+        most_similar_idx = indices[0][0]
+        if category:
+            filtered_products = [p for p in products if p["category"] == category]
+            if filtered_products:
+                return filtered_products[0]
+        return products[most_similar_idx]
+    except Exception as e:
+        print(f"Error in get_most_similar_product: {e}")
+        return None
+
+# Function to suggest a full skincare routine
+def suggest_skincare_routine():
+    categories = ["cleanser", "moisturizer", "cream", "serum", "eye cream"]
+    routine = {category: next((p for p in products if p["category"] == category), None) for category in categories}
+    return routine
 
 # Root endpoint
 @app.route('/')
@@ -93,45 +98,59 @@ def chat():
 
     data = request.json
     user_input = data.get('messages', [])
+    context = data.get('context', {})
 
     if not user_input:
-        return jsonify({"error": "No messages provided"}), 400
+        response = {
+            "message": "Hello! I'm Emma, your Embryolisse skincare consultant. How can I assist you today? Let's start by learning about your skin type—do you have dry, oily, or sensitive skin?",
+            "context": {"introduced": True}
+        }
+        return jsonify({"response": response})
 
-    # Extract the last user message
     last_message = user_input[-1]['content'].lower()
 
-    # Initialize response
-    response = None
+    if "skin_type" not in context:
+        context["skin_type"] = last_message
+        response = {
+            "message": "What are your main skincare concerns? Are you dealing with acne, dryness, wrinkles, or something else?",
+            "context": context
+        }
+        return jsonify({"response": response})
 
-    # Check if this is the first message in the conversation
-    if len(user_input) == 1 and ("hi" in last_message or "hello" in last_message):
-        response = "Hello! I'm your Embryolisse skincare consultant. How can I help you today?"
+    if "skin_concern" not in context:
+        context["skin_concern"] = last_message
+        response = {
+            "message": "May I ask your age group? This helps me recommend the best products for you.",
+            "context": context
+        }
+        return jsonify({"response": response})
+
+    if "age_group" not in context:
+        context["age_group"] = last_message
+    
+    if "routine" in last_message:
+        routine = suggest_skincare_routine()
+        response = {
+            "message": "Here is a full skincare routine tailored for you:",
+            "routine": routine,
+            "context": context
+        }
+        return jsonify({"response": response})
     else:
-        # Check if the user is asking a general question
-        general_questions = ["what is embryolisse", "what products do you sell", "where can i buy your products", "do you have products for oily skin", "do you have products for dry skin"]
-        if any(q in last_message for q in general_questions):
-            response = handle_general_question(last_message)
+        user_input_embedding = get_embedding(last_message)
+        if user_input_embedding is None:
+            return jsonify({"error": "Failed to generate embedding for user input"}), 500
+
+        most_similar_product = get_most_similar_product(user_input_embedding)
+        if most_similar_product:
+            response = {
+                "message": f"Based on your skin type and concern, I recommend the {most_similar_product['title']}. {most_similar_product['seo_description']}. Would you like me to suggest a full skincare routine as well?",
+                "product_details": most_similar_product,
+                "context": {"product_recommended": True, **context}
+            }
         else:
-            # Check if the user is asking for something specific (e.g., "I want a moisturizer for my dry skin")
-            additional_filters = None
-            if "moisturizer" in last_message:
-                additional_filters = "name ILIKE '%moisturizer%'"
-            elif "cleanser" in last_message:
-                additional_filters = "name ILIKE '%cleanser%'"
-            elif "serum" in last_message:
-                additional_filters = "name ILIKE '%serum%'"
-
-            # Fetch product recommendations
-            products = fetch_recommendations(None, None, None, additional_filters)
-            if products:
-                response = {"message": "Here are my recommendations for you:", "products": products}
-            else:
-                response = "Sorry, I couldn't find any products matching your needs."
-
-    # If no product recommendations, provide a generic response
-    if isinstance(response, str):
-        response = {"message": response}
-
+            response = {"message": "I'm sorry, I couldn't find a product recommendation. Would you like me to suggest a skincare routine instead?", "context": context}
+    
     return jsonify({"response": response})
 
 # Run the Flask app
