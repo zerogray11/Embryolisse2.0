@@ -2,6 +2,7 @@
   {
     "product": {
     "title": "Lait-Crème Retinol-Like",
+    "category":"Moisturizer",
     "vendor": "EMBRYOLISSE",
     "collections": "Lait-Crème",
     "size": "2.54 fl.oz.",
@@ -49,6 +50,7 @@
   { 
     "product": {
     "title": "Complete Serum",
+    "category":"Serum",
     "vendor": "EMBRYOLISSE",
     "collections": "Anti-Aging",
     "size": "1.01 fl.oz.",
@@ -83,6 +85,7 @@
   {
     "product": {
     "title": "Firming-Lifting Cream",
+    "category":"wrinkles cream",
     "vendor": "EMBRYOLISSE",
     "collections": "Anti-Aging",
     "size": "1.69 fl.oz.",
@@ -111,6 +114,7 @@
     "product": {
     "title": "Intense Lift Eye Cream",
     "vendor": "EMBRYOLISSE",
+    "category":"Eye Cream",
     "collections": "Anti-Aging",
     "size": "0.5 fl.oz.",
     "price": "$40.00",
@@ -138,6 +142,7 @@
   { "product": {
     "title": "Anti-Age Comfort Mask - Face Anti-Aging Mask",
     "vendor": "EMBRYOLISSE",
+    "category":"Mask",
     "collections": "Anti-Aging",
     "size": "2.03 fl.oz.",
     "price": "$30.00",
@@ -165,6 +170,7 @@
   {
     "product": {
     "title": "Nutri-Vitality Cream",
+    "category":"wrinkles cream",
     "vendor": "EMBRYOLISSE",
     "collections": "Anti-Aging",
     "size": "1.69 fl.oz.",
@@ -209,6 +215,7 @@
   "product": {
     "title": "3-in-1 Secret Paste",
     "vendor": "EMBRYOLISSE",
+    "category":"acne cream",
     "collections": "Anti-Blemish",
     "size": "3.38 fl.oz.",
     "price": "$30.00",
@@ -241,6 +248,7 @@
 {
   "product": {
     "title": "Mattifying Moisturizer",
+    "category":"Moisturizer",
     "vendor": "EMBRYOLISSE",
     "collections": "Anti-Blemish",
     "size": "1.69 fl.oz.",
@@ -271,6 +279,7 @@
 {
   "product": {
     "title": "Anti-Blemish Serum",
+    "category":"Serum",
     "vendor": "EMBRYOLISSE",
     "collections": "Anti-Blemish",
     "size": "1.01 fl.oz.",
@@ -301,6 +310,7 @@
     "product": {
       "title": "Radiant Complexion Cream - Pink Glow",
       "vendor": "EMBRYOLISSE",
+      "category":"Moisturizer",
       "collections": "Artist Secret",
       "size": "1.01 fl.oz.",
       "price": "$32.00",
@@ -330,6 +340,7 @@
     "product": {
       "title": "Radiant Complexion Cream - Apricot Glow",
       "vendor": "EMBRYOLISSE",
+      "category":"Moisturizer",
       "collections": "Artist Secret",
       "size": "1.01 fl.oz.",
       "price": "$32.00",
@@ -373,6 +384,7 @@
   {
     "product": {
       "title": "Concealer Correcting Care - Pink - For all Skin Types",
+      "category":"makeup",
       "vendor": "EMBRYOLISSE",
       "collections": "Artist Secret",
       "size": "0.27 fl.oz.",
@@ -440,6 +452,7 @@
   {
     "product": {
       "title": "Radiant Eye Stick - Cool Treatment For A Brighter Look",
+      "category":"makeup",
       "size": "0.15 oz",
       "price": "$25.00",
       "seo_title": "Radiant Eye Stick - Cool Treatment For A Brighter Look | EMBRYOLISSE Skincare",
@@ -482,6 +495,7 @@
   {
     "product": {
       "title": "Beauty Oil",
+      "category":"oil",
       "price": "$30.00",
       "seo_title": "Beauty Oil - The Marvel skincare for Face, Body and Hair - Embryolisse",
       "seo_description": "Moisturizing and nourishing, Beauty Oil by Embryolisse combines the powers of 4 active vegetable oils. The best of French pharmacy.",
@@ -526,6 +540,7 @@
 {
   "product": {
     "title": "Exfoliating Milk Powder",
+    "category":"Exfoliant",
     "seo_title": "Exfoliating Milk Powder | Embryolisse USA",
     "faq": [
       {
@@ -579,6 +594,7 @@
 {
   "product": {
     "title": "Gentle Waterproof Make-up Remover Milk",
+    "category":"makeup",
     "benefits": [
       "Removes even long-lasting/waterproof make-up",
       "Moisturizes durably",
@@ -627,6 +643,7 @@
 {
   "product": {
     "title": "Foaming Cream Milk - Face and Body Cleanser",
+    "category":"Cleanser",
     "benefits": [
       "Supple, soft and comfortable skin"
     ],
@@ -668,6 +685,7 @@
 {
   "product": {
     "title": "Micellar Lotion - Cleansing and Make-up Remover",
+    "category":"Cleanser",
     "vendor": "EMBRYOLISSE",
     "benefits": [
       "Removes makeup, impurities, and daily pollution",
@@ -710,6 +728,7 @@
 {
   "product": {
     "title": "Eau de Beaute Rosamelis - Face Toner For All Skin Types",
+    "category":"Toner",
     "vendor": "EMBRYOLISSE",
     "collections": "Cleansers & Make-Up Removers",
     "benefits": [
@@ -749,6 +768,7 @@
 {
   "product": {
     "title": "Lait-Crème Fluid+ Eco-Refill",
+    "category":"Moisturizer",
     "vendor": "EMBRYOLISSE",
     "collections": "Lait-Crème",
     "size": "13.52 Fl.oz",
@@ -814,6 +834,7 @@
   {
     "product": {
       "title": "Lait-Crème Sensitive - Fragrance Free",
+      "category":"Moisturizer",
       "vendor": "EMBRYOLISSE",
       "collections": "Lait-Crème",
       "size": "3.38 Fl.oz",
@@ -895,6 +916,7 @@
 {
   "product": {
     "title": "Lait-Crème Fluid+",
+    "category":"makeup",
     "vendor": "EMBRYOLISSE",
     "collections": "Lait-Crème",
     "size": "13.52 Fl.oz",
@@ -945,6 +967,7 @@
   {
     "product": {
       "title": "Lait-Crème Sensitive - Fragrance Free",
+      "category":"Moisturizer",
       "vendor": "EMBRYOLISSE",
       "collections": "Lait-Crème",
       "size": "3.38 Fl.oz",
@@ -1013,6 +1036,7 @@
   {
     "product": {
       "title": "Lait-Crème Concentré - Daily Face and Body Cream",
+      "category":"Body and Face Moisturizer",
       "vendor": "EMBRYOLISSE",
       "collections": "Lait-Crème",
       "size": "2.54 Fl.oz",
@@ -1080,6 +1104,7 @@
   {
     "product": {
       "title": "Hydra Cream Energizing",
+      "category":"Vitamin C",
       "vendor": "EMBRYOLISSE",
       "collections": "Moisturizers",
       "size": "1.35 Fl.oz",
@@ -1144,6 +1169,7 @@
   {
     "product": {
       "title": "Intense Moisturizing Mask",
+      "category":"Mask",
       "vendor": "EMBRYOLISSE",
       "collections": "Moisturizers",
       "size": "1.69 fl.oz.",
@@ -1209,6 +1235,7 @@
   {
     "product": {
       "title": "Hydra Cream Light - Lightweight active hydration",
+      "category":"Moisturizer",
       "vendor": "EMBRYOLISSE",
       "collections": "Moisturizers",
       "size": "1.35 Fl.oz.",
@@ -1257,6 +1284,7 @@
 {
   "product": {
     "title": "Hydra Serum - Hydration Booster",
+    "category":"Serum",
     "vendor": "EMBRYOLISSE",
     "collections": "Moisturizers",
     "size": "1.01 fl.oz",
@@ -1304,6 +1332,7 @@
 {
   "product": {
     "title": "Cicalisse Hands and Nails",
+    "category":"Hand Cream",
     "vendor": "EMBRYOLISSE",
     "collections": "Nourishing Cares",
     "size": "1.01 fl.oz.",
@@ -1432,6 +1461,7 @@
   {
     "product": {
       "title": "Filaderme Emulsion - Face Lotion For Dry Skin",
+      "category":"Moisturizer",
       "vendor": "EMBRYOLISSE",
       "collections": "Nourishing Cares",
       "size": "2.54 fl.oz.",
@@ -1479,6 +1509,7 @@
   {
     "product": {
       "title": "Protective & Nourishing Lip Balm",
+      "category":"Lip Balm",
       "vendor": "EMBRYOLISSE",
       "collections": "Nourishing Cares",
       "size": "0.15 oz",

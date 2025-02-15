@@ -8,40 +8,35 @@ const Chatbot = () => {
 
     const sendMessage = async () => {
         if (!input.trim()) return;
-
+    
         // Add user message to the chat
         const userMessage = { role: 'user', content: input };
         const updatedMessages = [...messages, userMessage];
         setMessages(updatedMessages);
         setInput('');
-
+    
         try {
             // Send the updated messages and context to the backend
             const response = await axios.post('http://localhost:5001/api/chat', {
                 messages: updatedMessages,
-                context: context, // Include the current context
+                context: context,
             });
-
+    
             const botResponse = response.data.response;
-
+    
             // Handle the backend response
-            if (botResponse && botResponse.message) {
+            if (botResponse) {
                 const botMessage = {
                     role: 'assistant',
-                    content: botResponse.message,
+                    content: botResponse,
                 };
-
-                // Add product details if available
-                if (botResponse.product_details) {
-                    botMessage.product_details = botResponse.product_details;
-                }
-
+    
                 // Update the messages with the bot's response
                 setMessages([...updatedMessages, botMessage]);
-
+    
                 // Update the context if provided by the backend
-                if (botResponse.context) {
-                    setContext(botResponse.context);
+                if (response.data.context) {
+                    setContext(response.data.context);
                 }
             } else {
                 console.error('Unexpected response format:', botResponse);
@@ -60,18 +55,6 @@ const Chatbot = () => {
                         <div style={msg.role === 'user' ? styles.userMessage : styles.botMessage}>
                             {msg.content}
                         </div>
-                        {msg.product_details && (
-                            <div style={styles.productList}>
-                                <div style={styles.productItem}>
-                                    <div style={styles.productDetails}>
-                                        <h4 style={styles.productName}>{msg.product_details.name}</h4>
-                                        <p>{msg.product_details.description}</p>
-                                        <p>Price: {msg.product_details.price}</p>
-                                        <p>Size: {msg.product_details.size}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
                     </div>
                 ))}
             </div>
@@ -145,28 +128,6 @@ const styles = {
         maxWidth: '80%',
         wordBreak: 'break-word',
         marginRight: 'auto',
-    },
-    productList: {
-        marginTop: '10px',
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    productItem: {
-        display: 'flex',
-        alignItems: 'center',
-        marginBottom: '12px',
-        padding: '12px',
-        backgroundColor: '#f9f9f9',
-        borderRadius: '10px',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    },
-    productDetails: {
-        flex: 1,
-    },
-    productName: {
-        fontSize: '16px',
-        fontWeight: '600',
-        color: '#4B3C31',
     },
     inputContainer: {
         display: 'flex',
