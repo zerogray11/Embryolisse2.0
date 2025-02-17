@@ -62,7 +62,7 @@ const Chatbot = () => {
 
     return (
         <div style={styles.chatbotContainer}>
-            <h1 style={styles.header}>Skincare Consultant</h1>
+            <h1 style={styles.header}>Embryolisse AI Consultant</h1>
             <div style={styles.chatWindow} ref={chatWindowRef}>
                 {messages.map((msg, index) => (
                     <div key={index} style={msg.role === 'user' ? styles.userMessageContainer : styles.botMessageContainer}>
@@ -94,18 +94,24 @@ const Chatbot = () => {
                                         <div style={styles.detailSection}>
                                             <span style={styles.detailLabel}>Usage</span>
                                             {typeof product.usage === 'string' ? (
-                                                <p style={styles.detailText}>{product.usage}</p>
-                                            ) : product.usage && typeof product.usage === 'object' ? (
-                                                <div style={styles.usageList}>
-                                                    {Object.entries(product.usage).map(([key, value], i) => (
-                                                        <div key={i} style={styles.usageItem}>
-                                                            <span style={styles.usageDash}>─</span> {value}
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            ) : (
-                                                <p style={styles.detailText}>No usage instructions available.</p>
-                                            )}
+    <div style={styles.usageList}>
+        {product.usage.split('\n').map((line, index) => (
+            <div key={index} style={styles.usageItem}>
+                <span style={styles.usageDash}>-</span> {line}
+            </div>
+        ))}
+    </div>
+) : product.usage && typeof product.usage === 'object' ? (
+    <div style={styles.usageList}>
+        {Object.entries(product.usage).map(([key, value], i) => (
+            <div key={i} style={styles.usageItem}>
+                <span style={styles.usageDash}>-</span> {value}
+            </div>
+        ))}
+    </div>
+) : (
+    <p style={styles.detailText}>No usage instructions available.</p>
+)}
                                         </div>
                                     </div>
                                 </div>
@@ -140,10 +146,10 @@ const styles = {
     chatbotContainer: {
         width: '100%',
         height: '100vh',
-        maxWidth: '800px', // Optional: Limit width for better readability
-        margin: '0 auto', // Center the chatbot horizontally
+        maxWidth: '800px',
+        margin: '0 auto',
         backgroundColor: '#F5F5F0',
-        borderRadius: '10px',
+        borderRadius: '12px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         display: 'flex',
         flexDirection: 'column',
@@ -153,21 +159,23 @@ const styles = {
     },
     header: {
         textAlign: 'center',
-        fontSize: '24px',
+        fontSize: '28px',
         color: '#4B3C31',
         marginBottom: '15px',
         fontFamily: 'Playfair Display, serif',
         fontWeight: '500',
+        letterSpacing: '0.5px', 
     },
     chatWindow: {
         flex: 1,
         overflowY: 'auto',
         marginBottom: '10px',
-        maxHeight: 'calc(100vh - 200px)', // Adjust based on header and input container height
+        maxHeight: 'calc(100vh - 200px)', 
     },
     userMessageContainer: {
         display: 'flex',
         justifyContent: 'flex-end',
+        
         marginBottom: '10px',
     },
     botMessageContainer: {
@@ -180,33 +188,53 @@ const styles = {
         lineHeight: '1.5',
         marginBottom: '8px',
     },
+    messageText: {
+        fontFamily: 'Playfair Display, serif', 
+        lineHeight: '1.6',
+        marginBottom: '8px',
+        fontSize: '15px', 
+        letterSpacing: '0.3px', 
+        color: '#4B3C31', 
+    },
     userMessage: {
-        padding: '12px 18px',
+        padding: '14px 20px', 
         backgroundColor: 'white',
-        borderRadius: '15px',
+        borderRadius: '12px', 
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.05)',
-        fontSize: '14px',
         display: 'block',
         maxWidth: '80%',
         wordBreak: 'break-word',
         marginLeft: 'auto',
+        border: '1px solid rgba(235, 230, 223, 0.4)', 
     },
     botMessage: {
-        padding: '12px 18px',
+        padding: '14px 20px',
         backgroundColor: 'white',
-        borderRadius: '15px',
+        borderRadius: '12px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.05)',
-        fontSize: '14px',
         display: 'block',
         maxWidth: '80%',
         wordBreak: 'break-word',
         marginRight: 'auto',
-        fontFamily: 'Inter, sans-serif',
+        fontFamily: 'Playfair Display, serif',
+        border: '1px solid rgba(235, 230, 223, 0.4)',
     },
     thinkingText: {
+        fontFamily: 'Playfair Display, serif',
         fontStyle: 'italic',
         color: '#9A8E83',
-        fontFamily: 'Inter, sans-serif',
+        fontSize: '15px',
+        letterSpacing: '0.3px',
+    },
+    productTitle: {
+        fontFamily: 'Playfair Display, serif',
+        fontSize: '20px', 
+        fontWeight: '500',
+        letterSpacing: '0.3px',
+        color: '#4B3C31',
+        marginBottom: '10px',
+        borderBottom: '1px solid #E8E8E0',
+        paddingBottom: '8px',
     },
     productContainer: {
         marginTop: '15px',
@@ -223,17 +251,13 @@ const styles = {
         marginBottom: '12px',
     },
     productImage: {
-        width: '120px', // Increased width
-        height: '120px', // Increased height
+        width: '120px', 
+        height: '120px', 
         borderRadius: '8px',
         marginRight: '12px',
         objectFit: 'cover',
     },
-    productTitle: {
-        fontFamily: 'Playfair Display, serif',
-        fontSize: '18px',
-        fontWeight: '500',
-    },
+   
     productDetails: {
         display: 'flex',
         flexDirection: 'column',
@@ -245,17 +269,20 @@ const styles = {
     detailLabel: {
         display: 'block',
         color: '#4B3C31',
-        fontSize: '14px',
+        fontSize: '15px',
         fontWeight: '500',
-        fontFamily: 'Inter, sans-serif',
-        marginBottom: '4px',
+        fontFamily: 'Playfair Display, serif',
+        marginBottom: '6px',
+        letterSpacing: '0.3px',
     },
     detailText: {
         fontSize: '14px',
         color: '#666666',
-        lineHeight: '1.5',
+        lineHeight: '1.6',
         margin: '0',
-        fontFamily: 'Inter, sans-serif',
+        fontFamily: 'Inter, sans-serif', 
+        fontStyle: 'italic',
+        fontWeight: '300',
     },
     usageList: {
         display: 'flex',
@@ -289,20 +316,32 @@ const styles = {
         boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
     },
     button: {
-        padding: '12px 20px',
-        backgroundColor: '#F5F5DC', // Light beige color
-        color: '#4B3C31', 
-        border: 'none',
+        padding: '12px 24px',
+        background: 'rgb(36, 42, 135)', // Embryolisse blue
+        color: '#FFFFFF', // White font
+        border: 'none', // Remove border for a cleaner look
         borderRadius: '12px',
         cursor: 'pointer',
         fontWeight: '500',
-        fontSize: '14px',
+        fontSize: '11px',
         fontFamily: 'Inter, sans-serif',
-        transition: 'background-color 0.3s ease',
+        transition: 'all 0.3s ease',
+        position: 'relative',
+        overflow: 'hidden',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
+        textTransform: 'uppercase',
+        letterSpacing: '0.5px',
         '&:hover': {
-            backgroundColor: '#E0D8C0', 
+            background: '#005F8E', // Slightly darker blue on hover
+            transform: 'translateY(-1px)',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)', // Enhanced shadow on hover
         },
-    },
+        '&:active': {
+            transform: 'translateY(1px)',
+            boxShadow: '0 1px 4px rgba(0, 0, 0, 0.1)', // Reduced shadow on click
+        }
+    }
+   
 };
 
 export default Chatbot;

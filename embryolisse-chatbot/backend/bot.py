@@ -37,7 +37,7 @@ def get_db_connection():
 # Function to call OpenAI API for chat response
 def ask_openai(prompt):
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",  # the new model name
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are Emma, the Embryolisse Consultant."},
             {"role": "user", "content": prompt}
@@ -47,11 +47,29 @@ def ask_openai(prompt):
     )
     return response.choices[0].message.content.strip()
 
+# Function to enhance product descriptions
+def rephrase_with_openai(text, field):
+    """Use OpenAI to enhance product descriptions"""
+    try:
+        prompt = f"Rephrase these product {field} in a professional skincare expert tone: {text}"
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a marketing assistant that improves product descriptions."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=200,
+            temperature=0.7,
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"Error rephrasing {field}: {e}")
+        return text  # Fallback to original text
 
-# Function to recommend products based on user input
 def recommend_products(context):
-    skin_type = context['skin_type']
-    concerns = context['concerns']
+    """Recommend products based on user input"""
+    skin_type = context['skin_type'].lower()
+    concerns = context['concerns'].lower()
     age_group = context['age_group']
     category = context.get('category', None)
 
@@ -107,64 +125,87 @@ def recommend_products(context):
 
     return response
 
-# Function to recommend a skincare routine
 def recommend_routine(context):
-    skin_type = context['skin_type']
-    concerns = context['concerns']
+    skin_type = context['skin_type'].lower()
+    concerns = context['concerns'].lower()
     age_group = context['age_group']
 
-    # Query the database for matching products
-    conn = get_db_connection()
-    cur = conn.cursor()
-    categories = ["Cleanser", "Serum", "Moisturizer", "Eye Cream", "Mask"]
+    # Core routine categories including Oil
+    categories = ["Cleanser", "Toner", "Moisturizer", "Serum", "Exfoliant", "Mask", "Oil"]
     response = {
-        "message": "Here is a full skincare routine tailored for you:",
+        "message": "Here is your personalized skincare routine:",
         "products": []
     }
 
+    # Get core products
     for category in categories:
-        query = """
-            SELECT title, category, benefits, ingredients, usage, images, urls
-            FROM products
-            WHERE
-                category ILIKE %s AND
-                (skin_type ILIKE %s OR skin_type = 'all') AND
-                (concerns ILIKE %s OR concerns = 'all') AND
-                (age_group ILIKE %s OR age_group = 'all')
-            LIMIT 1
-        """
-        params = (
-            f"%{category}%",  # Match the specified category
-            f"%{skin_type}%",  # Match skin type
-            f"%{concerns}%",   # Match concerns
-            f"%{age_group}%"   # Match age group
-        )
-
-        cur.execute(query, params)
-        product = cur.fetchone()
-
+        product = get_product_by_category(category, context)
         if product:
-            # Convert bytea image data to base64
-            image_base64 = base64.b64encode(product[5]).decode('utf-8') if product[5] else None
+            # Enhance descriptions
+            product['benefits'] = rephrase_with_openai(product['benefits'], "benefits")
+            product['ingredients'] = rephrase_with_openai(product['ingredients'], "ingredients")
+            response["products"].append(product)
 
-            product_details = {
-                "title": product[0],
-                "category": product[1],
-                "benefits": product[2],
-                "ingredients": product[3],
-                "usage": product[4],
-                "image": image_base64,  # Base64-encoded image
-                "url": product[6]  # URL for the product
-            }
-            response["products"].append(product_details)
+    # Add Vitamin C for everyone except sensitive skin
+    if 'sensitive' not in skin_type:
+        vc_product = get_product_by_category("Vitamin C", context)
+        if vc_product and not any(p['category'] == 'Vitamin C' for p in response["products"]):
+            vc_product['benefits'] = rephrase_with_openai(vc_product['benefits'], "benefits")
+            vc_product['ingredients'] = rephrase_with_openai(vc_product['ingredients'], "ingredients")
+            response["products"].append(vc_product)
 
-    cur.close()
-    conn.close()
+    # Ensure mask is always included
+    if not any(p['category'] == 'Mask' for p in response["products"]):
+        mask_product = get_product_by_category("Mask", context)
+        if mask_product:
+            mask_product['benefits'] = rephrase_with_openai(mask_product['benefits'], "benefits")
+            mask_product['ingredients'] = rephrase_with_openai(mask_product['ingredients'], "ingredients")
+            response["products"].append(mask_product)
 
     if not response["products"]:
-        return "I couldn't find any products matching your criteria. Would you like to try again?"
-
+        return "I couldn't create a suitable routine. Let's try again!"
+    
     return response
+
+def get_product_by_category(category, context):
+    """Helper to fetch products by category with context filters"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    query = """
+        SELECT title, category, benefits, ingredients, usage, images, urls
+        FROM products
+        WHERE
+            category ILIKE %s AND
+            (skin_type ILIKE %s OR skin_type = 'all') AND
+            (concerns ILIKE %s OR concerns = 'all') AND
+            (age_group ILIKE %s OR age_group = 'all')
+        LIMIT 1
+    """
+    params = (
+        f"%{category}%",
+        f"%{context['skin_type']}%",
+        f"%{context['concerns']}%",
+        f"%{context['age_group']}%"
+    )
+    
+    cur.execute(query, params)
+    product = cur.fetchone()
+    cur.close()
+    conn.close()
+    
+    if product:
+        image_base64 = base64.b64encode(product[5]).decode('utf-8') if product[5] else None
+        return {
+            "title": product[0],
+            "category": product[1],
+            "benefits": product[2],
+            "ingredients": product[3],
+            "usage": product[4],
+            "image": image_base64,
+            "url": product[6]
+        }
+    return None
 
 # Route for the root URL
 @app.route('/')
@@ -195,7 +236,7 @@ def chat():
 
     # Step 1: Introduction and offer help
     if not context.get('introduced'):
-        response = ask_openai("Introduce yourself as Emma the Embryolisse Consultant and ask how you can help them. Offer two options: 1) Find a product 2) Build a skincare routine.")
+        response = ask_openai("Give a brief introduction as Emma the Embryolisse Consultant asking if they want to build a routine or find a product.")
         context['introduced'] = True
         return jsonify({"response": response, "context": context}), 200, response_headers
 
@@ -203,20 +244,21 @@ def chat():
     if not context.get('choice'):
         if "product" in user_message.lower():
             context['choice'] = 'product'
-            response = "Sure! Let's find the perfect product for you. What category are you looking for? (e.g., Cleanser, Serum, Moisturizer, Eye Cream, Mask)"
+            categories = ["Cleanser", "Toner", "Serum", "Exfoliant", "Moisturizer", "Mask", "Oil", "Eye Cream"]
+            response = f"Let's find the perfect product! What category are you looking for? (e.g., {', '.join(categories)})"
             return jsonify({"response": response, "context": context}), 200, response_headers
         elif "routine" in user_message.lower():
             context['choice'] = 'routine'
-            response = "Great! Let's build a personalized skincare routine for you. What is your skin type? (e.g., oily, dry, combination)"
+            response = "Let's build your personalized routine! What is your skin type? (e.g., oily, dry, combination)"
             return jsonify({"response": response, "context": context}), 200, response_headers
         else:
-            return jsonify({"response": "Sorry, I didn't understand that. Can you rephrase?", "context": context}), 200, response_headers
+            return jsonify({"response": "Please let me know if you'd like help building a routine or finding a product.", "context": context}), 200, response_headers
 
     # Step 3: Handle product recommendation
     if context['choice'] == 'product':
         if not context.get('category'):
-            # Ask for the product category
-            categories = ["Cleanser", "Serum", "Moisturizer", "Eye Cream", "Mask"]
+            # Ask for the product category with all options
+            categories = ["Cleanser", "Toner", "Serum", "Exfoliant", "Moisturizer", "Mask", "Oil", "Eye Cream"]
             detected_category = None
             for category in categories:
                 if category.lower() in user_message.lower():
@@ -225,10 +267,10 @@ def chat():
 
             if detected_category:
                 context['category'] = detected_category
-                response = "Got it! What is your skin type? (e.g., oily, dry, combination)"
+                response = "Great choice! What is your skin type? (e.g., oily, dry, combination)"
                 return jsonify({"response": response, "context": context}), 200, response_headers
             else:
-                return jsonify({"response": "Could you please tell me the category of the product you're looking for? (e.g., Cleanser, Serum, Moisturizer, Eye Cream, Mask)", "context": context}), 200, response_headers
+                return jsonify({"response": f"Could you specify the product category? (e.g., {', '.join(categories)})", "context": context}), 200, response_headers
         elif not context.get('skin_type'):
             # Check for skin type keywords
             skin_types = ["oily", "dry", "combination"]
@@ -270,13 +312,13 @@ def chat():
 
             if detected_age_group:
                 context['age_group'] = detected_age_group
-                # Step 4: Recommend top 3 products in the specified category
+                # Recommend products
                 response = recommend_products(context)
                 return jsonify({"response": response, "context": context}), 200, response_headers
             else:
                 return jsonify({"response": "May I ask your age group? (e.g., 20s, 30s, 40s, 50s+)", "context": context}), 200, response_headers
 
-    # Step 5: Handle skincare routine recommendation
+    # Step 4: Handle skincare routine recommendation
     elif context['choice'] == 'routine':
         if not context.get('skin_type'):
             # Check for skin type keywords
@@ -325,7 +367,7 @@ def chat():
             else:
                 return jsonify({"response": "May I ask your age group? (e.g., 20s, 30s, 40s, 50s+)", "context": context}), 200, response_headers
 
-    return jsonify({"response": "Sorry, I couldn't understand that. Can you rephrase?", "context": context}), 200, response_headers
+    return jsonify({"response": "Let me know how else I can assist you with your skincare needs!", "context": context}), 200, response_headers
 
 if __name__ == "__main__":
     app.run(debug=True)
