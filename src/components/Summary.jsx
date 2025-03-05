@@ -1,83 +1,72 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ShoppingBag, Star, Heart } from 'lucide-react';
+import { 
+  Star, 
+  Heart, 
+  ShoppingCart, 
+  ChevronLeft 
+} from 'lucide-react';
 
 const ProductCard = ({ product, onFavorite, isFavorited }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <div 
-      className="relative bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* Product Image Placeholder */}
-      <div className="relative h-48 bg-gray-100 flex items-center justify-center">
+    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+      {/* Product Image */}
+      <div className="w-full aspect-square bg-[rgb(255,245,235)] flex items-center justify-center">
         <img 
-          src={`/api/placeholder/300/200?text=${encodeURIComponent(product.name)}`} 
+          src={`/api/placeholder/300/300?text=${encodeURIComponent(product.name)}`} 
           alt={product.name} 
-          className="max-h-full max-w-full object-contain"
+          className="w-full h-full object-cover"
         />
-        
-        {/* Hover Effect */}
-        <div className={`
-          absolute inset-0 bg-[rgb(6,31,108)] bg-opacity-0 
-          transition-all duration-300
-          flex items-center justify-center
-          ${isHovered ? 'bg-opacity-70' : ''}
-        `}>
-          {isHovered && (
-            <div className="text-white text-center px-4">
-              <p className="text-sm mb-2">{product.description}</p>
-              <div className="flex justify-center space-x-4">
-                <button 
-                  className="bg-white text-[rgb(6,31,108)] px-4 py-2 rounded-lg flex items-center hover:bg-gray-100"
-                  onClick={() => {/* Add to cart logic */}}
-                >
-                  <ShoppingBag size={20} className="mr-2" /> Add to Cart
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
       </div>
 
       {/* Product Details */}
-      <div className="p-4">
-        <div className="flex justify-between items-center">
-          <h3 className="text-lg font-bold text-gray-800">{product.name}</h3>
+      <div className="p-6 space-y-4">
+        <div className="flex justify-between items-start">
+          <div>
+            <h3 className="text-2xl font-bold text-[rgb(6,31,108)]">{product.name}</h3>
+          </div>
           <button 
             onClick={() => onFavorite(product.id)}
             className={`
               transition-colors duration-300
-              ${isFavorited ? 'text-red-500' : 'text-gray-300'}
+              ${isFavorited ? 'text-red-500' : 'text-[rgb(6,31,108)]'}
               hover:text-red-500
             `}
           >
             <Heart size={24} fill={isFavorited ? 'currentColor' : 'none'} />
           </button>
         </div>
-        
-        <div className="flex items-center mt-2">
-          <div className="flex text-yellow-400 mr-2">
-            {[...Array(5)].map((_, i) => (
-              <Star 
-                key={i} 
-                size={20} 
-                fill={i < product.rating ? 'currentColor' : 'none'}
-                stroke="currentColor"
-              />
-            ))}
+
+        {/* Rating */}
+        <div className="flex items-center space-x-1 text-yellow-500">
+          {[...Array(5)].map((_, i) => (
+            <Star 
+              key={i} 
+              size={16} 
+              fill={i < product.rating ? 'currentColor' : 'none'}
+              stroke="currentColor"
+            />
+          ))}
+          <span className="text-gray-600 ml-2 text-sm">({product.reviewCount})</span>
+        </div>
+
+        {/* Price and Discount */}
+        <div className="flex justify-between items-center">
+          <div className="text-[rgb(6,31,108)] font-semibold text-2xl">
+            ${product.price.toFixed(2)}
           </div>
-          <span className="text-gray-600 text-sm">({product.reviewCount} reviews)</span>
+          {product.discount > 0 && (
+            <span className="text-green-600 font-semibold">
+              {product.discount}% OFF
+            </span>
+          )}
         </div>
-        
-        <div className="mt-3 flex justify-between items-center">
-          <span className="text-xl font-bold text-[rgb(6,31,108)]">${product.price.toFixed(2)}</span>
-          <span className="text-green-600 font-semibold">
-            {product.discount > 0 ? `${product.discount}% OFF` : ''}
-          </span>
-        </div>
+
+        {/* Add to Cart */}
+        <button className="w-full bg-[rgb(6,31,108)] text-white py-3 rounded-lg flex items-center justify-center space-x-2 hover:opacity-90">
+          <ShoppingCart size={20} />
+          <span>Add to Cart</span>
+        </button>
       </div>
     </div>
   );
@@ -112,38 +101,70 @@ const Summary = () => {
   }));
 
   return (
-    <div className="bg-[rgb(255,240,222)] min-h-screen flex flex-col justify-center items-center p-4 sm:p-6">
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            Welcome, {userResponse.name || 'Skincare Enthusiast'}!
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Discover your personalized Embryolisse skincare solutions
-          </p>
+    <div className="bg-[rgb(255,240,222)] min-h-screen py-8">
+      <div className="container mx-auto px-4 max-w-6xl">
+        {/* Navigation */}
+        <div className="flex justify-between items-center mb-6">
+          <button className="text-[rgb(6,31,108)]">
+            <ChevronLeft size={24} />
+          </button>
         </div>
 
-        {enrichedRecommendations.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {enrichedRecommendations.map((product) => (
-              <ProductCard 
-                key={product.id} 
-                product={product}
-                onFavorite={handleFavorite}
-                isFavorited={favoritedProducts.has(product.id)}
-              />
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-700 text-center text-xl">
-            No recommendations found. Let's discover your perfect skincare routine!
-          </p>
-        )}
+        {/* Brand Header */}
+        <div className="text-center mb-8">
+          <p className="text-sm text-gray-600">laboratoires</p>
+          <h1 className="text-3xl font-light text-[rgb(6,31,108)] tracking-wider">EMBRYOLISSE</h1>
+        </div>
 
-        <div className="text-center mt-6">
-          <p className="text-gray-600 italic">
-            "Radiant skin is just a step away with Embryolisse"
-          </p>
+        {/* Recommendations Container */}
+        <div className="bg-white rounded-2xl shadow-xl p-6">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-[rgb(6,31,108)] mb-2">
+              Welcome, {userResponse.name || 'Skincare Enthusiast'}!
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Discover your personalized Embryolisse skincare solutions
+            </p>
+          </div>
+
+          {enrichedRecommendations.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {enrichedRecommendations.map((product) => (
+                <ProductCard 
+                  key={product.id} 
+                  product={product}
+                  onFavorite={handleFavorite}
+                  isFavorited={favoritedProducts.has(product.id)}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="text-gray-700 text-center text-xl">
+              No recommendations found. Let's discover your perfect skincare routine!
+            </p>
+          )}
+
+          {/* Newsletter Section */}
+          <div className="mt-12 bg-[rgb(255,245,235)] rounded-2xl p-6">
+            <h3 className="text-xl font-bold text-[rgb(6,31,108)] mb-4">Stay Updated</h3>
+            <p className="text-gray-600 mb-4">Sign up to our newsletter to receive exclusive offers.</p>
+            <div className="flex flex-col sm:flex-row">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-grow px-4 py-2 border border-gray-300 rounded-lg sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-[rgb(6,31,108)]"
+              />
+              <button className="bg-[rgb(6,31,108)] text-white px-4 py-2 rounded-lg sm:rounded-l-none mt-2 sm:mt-0">
+                Subscribe
+              </button>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-600 italic text-lg">
+              "Radiant skin is just a step away with Embryolisse"
+            </p>
+          </div>
         </div>
       </div>
     </div>
