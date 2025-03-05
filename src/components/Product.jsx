@@ -128,7 +128,7 @@ const Product = () => {
 
   return (
     <div className="bg-[rgb(255,240,222)] min-h-screen py-8">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         {/* Navigation and Favorites */}
         <div className="flex justify-between items-center mb-6">
           <button className="text-[rgb(6,31,108)]">
@@ -145,10 +145,10 @@ const Product = () => {
           <h1 className="text-3xl font-light text-[rgb(6,31,108)] tracking-wider">EMBRYOLISSE</h1>
         </div>
 
-        {/* Product Details */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* Product Image - Updated to blend better with container */}
-          <div className="w-full aspect-square bg-[rgb(255,245,235)] flex items-center justify-center p-0">
+        {/* Product Details - Responsive Grid */}
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden lg:grid lg:grid-cols-2">
+          {/* Product Image */}
+          <div className="w-full aspect-square bg-[rgb(255,245,235)] flex items-center justify-center">
             <img 
               src={LaitCremeConcentre}
               alt="Lait-Crème Concentré" 
@@ -232,13 +232,13 @@ const Product = () => {
 
             {/* Tabs */}
             <div>
-              <div className="flex space-x-4 border-b mb-4">
+              <div className="flex space-x-4 border-b mb-4 overflow-x-auto">
                 {['Benefits', 'How to use', 'Ingredients', 'Ecoconception'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => handleTabChange(tab)}
                     className={`
-                      py-2 
+                      py-2 whitespace-nowrap
                       ${activeTab === tab 
                         ? 'border-b-2 border-[rgb(6,31,108)] text-[rgb(6,31,108)]' 
                         : 'text-gray-500'}
@@ -291,66 +291,108 @@ const Product = () => {
           ))}
         </div>
 
-        {/* Conditional Rendering of Sections */}
-        {activeSection === 'FAQ' && (
-          <div className="bg-white rounded-2xl shadow-xl">
-            <div className="p-6">
-              <h2 className="text-2xl font-bold text-[rgb(6,31,108)] mb-4">Frequently Asked Questions</h2>
-              {faqQuestions.map((faq, index) => (
-                <FAQItem 
-                  key={index} 
-                  question={faq.question} 
-                  answer={faq.answer} 
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {activeSection === 'Reviews' && (
-          <div className="bg-white rounded-2xl shadow-xl">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-[rgb(6,31,108)]">Customer Reviews</h2>
-                <div className="flex items-center space-x-1 text-yellow-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={20} fill="currentColor" />
+        {/* Additional Content Sections - Responsive Grid for larger screens */}
+        <div className="lg:grid lg:grid-cols-2 lg:gap-6">
+          {/* FAQ and Reviews Sections */}
+          <div>
+            {activeSection === 'FAQ' && (
+              <div className="bg-white rounded-2xl shadow-xl mb-6">
+                <div className="p-6">
+                  <h2 className="text-2xl font-bold text-[rgb(6,31,108)] mb-4">Frequently Asked Questions</h2>
+                  {faqQuestions.map((faq, index) => (
+                    <FAQItem 
+                      key={index} 
+                      question={faq.question} 
+                      answer={faq.answer} 
+                    />
                   ))}
-                  <span className="text-gray-600 ml-2">4.85 (108 reviews)</span>
                 </div>
               </div>
-              <button className="w-full bg-[rgb(6,31,108)] text-white py-3 rounded-lg mb-6">
-                Write a Review
-              </button>
-              {reviews.map((review, index) => (
-                <ReviewCard 
-                  key={index}
-                  name={review.name}
-                  skinType={review.skinType}
-                  ageRange={review.ageRange}
-                  title={review.title}
-                  content={review.content}
-                  keyFeatures={review.keyFeatures}
-                  scent={review.scent}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+            )}
 
-        {/* Newsletter Signup */}
-        <div className="bg-white rounded-2xl shadow-xl mt-6 p-6">
-          <h3 className="text-xl font-bold text-[rgb(6,31,108)] mb-4">Stay Updated</h3>
-          <p className="text-gray-600 mb-4">Sign up to our newsletter to receive exclusive offers.</p>
-          <div className="flex">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[rgb(6,31,108)]"
-            />
-            <button className="bg-[rgb(6,31,108)] text-white px-4 py-2 rounded-r-lg">
-              Subscribe
-            </button>
+            {activeSection === 'Reviews' && (
+              <div className="bg-white rounded-2xl shadow-xl mb-6">
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-6 flex-wrap">
+                    <h2 className="text-2xl font-bold text-[rgb(6,31,108)]">Customer Reviews</h2>
+                    <div className="flex items-center space-x-1 text-yellow-500 mt-2 sm:mt-0">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={20} fill="currentColor" />
+                      ))}
+                      <span className="text-gray-600 ml-2">4.85 (108 reviews)</span>
+                    </div>
+                  </div>
+                  <button className="w-full bg-[rgb(6,31,108)] text-white py-3 rounded-lg mb-6">
+                    Write a Review
+                  </button>
+                  {reviews.map((review, index) => (
+                    <ReviewCard 
+                      key={index}
+                      name={review.name}
+                      skinType={review.skinType}
+                      ageRange={review.ageRange}
+                      title={review.title}
+                      content={review.content}
+                      keyFeatures={review.keyFeatures}
+                      scent={review.scent}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Newsletter Section - Always visible on larger screens */}
+          <div>
+            <div className="bg-white rounded-2xl shadow-xl mb-6">
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[rgb(6,31,108)] mb-4">Stay Updated</h3>
+                <p className="text-gray-600 mb-4">Sign up to our newsletter to receive exclusive offers.</p>
+                <div className="flex flex-col sm:flex-row">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="flex-grow px-4 py-2 border border-gray-300 rounded-lg sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-[rgb(6,31,108)]"
+                  />
+                  <button className="bg-[rgb(6,31,108)] text-white px-4 py-2 rounded-lg sm:rounded-l-none mt-2 sm:mt-0">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Additional content section for large screens */}
+            <div className="bg-white rounded-2xl shadow-xl mb-6 hidden lg:block">
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[rgb(6,31,108)] mb-4">Our Bestsellers</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-[rgb(255,245,235)] rounded-lg"></div>
+                    <div>
+                      <h4 className="font-medium text-[rgb(6,31,108)]">Lait-Crème Sensitive</h4>
+                      <p className="text-gray-600 text-sm">For sensitive skin</p>
+                      <p className="text-[rgb(6,31,108)] font-semibold mt-1">$32.00</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-[rgb(255,245,235)] rounded-lg"></div>
+                    <div>
+                      <h4 className="font-medium text-[rgb(6,31,108)]">Hydra-Mask</h4>
+                      <p className="text-gray-600 text-sm">Intensive hydration</p>
+                      <p className="text-[rgb(6,31,108)] font-semibold mt-1">$25.00</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-[rgb(255,245,235)] rounded-lg"></div>
+                    <div>
+                      <h4 className="font-medium text-[rgb(6,31,108)]">Micellar Water</h4>
+                      <p className="text-gray-600 text-sm">Gentle cleansing</p>
+                      <p className="text-[rgb(6,31,108)] font-semibold mt-1">$22.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
