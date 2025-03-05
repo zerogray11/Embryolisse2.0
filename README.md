@@ -1,4 +1,4 @@
-Skincare Recommendation App
+Skincare Recommendation App: 
 This is the React frontend part of our skincare recommendation application that guides users through a questionnaire to provide personalized skincare product recommendations. The app uses a step-by-step approach to collect user preferences and skin-related information, then fetches product recommendations based on the responses.
 
 Features
