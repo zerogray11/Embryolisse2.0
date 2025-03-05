@@ -95,3 +95,4 @@ Acknowledgments
 
 Embryolisse: For the inspiration and branding.
 React Community: For the extensive documentation and resources.
+
