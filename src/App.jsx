@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Questionnaire from './pages/Questionnaire';
 import Product from './components/Product';
-import Summary from './components/Summary'; // Import the Summary component
+import Summary from './components/Summary'; 
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
         <Route path="/" element={<Home />} /> {/* Home is the default landing page */}
         <Route path="/questionnaire" element={<Questionnaire />} /> {/* Route for Questionnaire */}
         <Route path="/product" element={<Product />} /> {/* Route for Product */}
-        <Route path="/summary" element={<Summary />} /> {/* Add this route for Summary */}
+        <Route path="/summary" element={<Summary />} /> {/* Route for Summary */}
       </Routes>
     </Router>
   );
