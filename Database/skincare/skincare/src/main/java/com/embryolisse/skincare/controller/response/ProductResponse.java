@@ -7,16 +7,20 @@ public class ProductResponse {
     private Long productId;
     private String name;
     private String description;
+    private String imageUrl;
 
-    public ProductResponse() {
-    }
+    // Default constructor
+    public ProductResponse() {}
 
-    public ProductResponse(Long productId, String name, String description) {
+    // Constructor with all fields
+    public ProductResponse(Long productId, String name, String description, String imageUrl) {
         this.productId = productId;
         this.name = name;
         this.description = description;
+        this.imageUrl = imageUrl;
     }
 
+    // Getters and Setters
     public Long getProductId() {
         return productId;
     }
@@ -41,9 +45,21 @@ public class ProductResponse {
         this.description = description;
     }
 
-    public static ProductResponse toResponse(Product product) {
-        return new ProductResponse(product.getId(), product.getName(),
-                product.getDescription());
+    public String getImageUrl() {
+        return imageUrl;
     }
 
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    // Static method to convert Product to ProductResponse
+    public static ProductResponse toResponse(Product product) {
+        return new ProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getDescription(),
+                product.getImageUrl()
+        );
+    }
 }
