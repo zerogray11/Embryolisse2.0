@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173") //This is really important to tell it how to connect to REACT Front-end
+@CrossOrigin(origins = "http://localhost:5174") //This is really important to tell it how to connect to REACT Front-end
 @RequestMapping("api/products")
 public class ProductController {
 
