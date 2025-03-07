@@ -96,4 +96,23 @@ public class ProductController {
                 .map(ProductResponse::toResponse)
                 .collect(Collectors.toList());
     }
+
+    // For filtering by multiple conditions combined
+    // Test this with GET http://localhost:8080/api/products/filter?skinType=Dry&concern=Dryness&breakout=Rarely&targetArea=Face&forWinter=true&forSun=true
+    @GetMapping("/filter")
+    public List<ProductResponse> getFilteredProducts(
+            @RequestParam(required = false) String skinType,
+            @RequestParam(required = false) String concern,
+            @RequestParam(required = false) String breakout,
+            @RequestParam(required = false) String targetArea,
+            @RequestParam(required = false) Boolean forWinter,
+            @RequestParam(required = false) Boolean forSun) {
+
+        List<Product> products = service.getFilteredProducts(skinType, concern, breakout, targetArea, forWinter, forSun);
+
+        return products.stream()
+                .map(ProductResponse::toResponse)
+                .collect(Collectors.toList());
+
+    }
 }

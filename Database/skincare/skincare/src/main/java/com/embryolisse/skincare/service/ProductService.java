@@ -50,4 +50,23 @@ public class ProductService {
     public List<Product> getProductsByForSun(Boolean forSun) {
         return repository.findByForSun(forSun);
     }
+
+    // Method to get products filtered by all the conditions
+    public List<Product> getFilteredProducts(String skinType, String concern, String breakout,
+                                             String targetArea, Boolean forWinter, Boolean forSun) {
+        if (skinType != null && skinType.trim().isEmpty()) skinType = null;
+        if (concern != null && concern.trim().isEmpty()) concern = null;
+        if (breakout != null && breakout.trim().isEmpty()) breakout = null;
+        if (targetArea != null && targetArea.trim().isEmpty()) targetArea = null;
+
+        System.out.println("Filtering with: " +
+                "skinType=" + skinType +
+                ", concern=" + concern +
+                ", breakout=" + breakout +
+                ", targetArea=" + targetArea +
+                ", forWinter=" + forWinter +
+                ", forSun=" + forSun);
+
+        return repository.findFilteredProducts(skinType, concern, breakout, targetArea, forWinter, forSun);
+    }
 }
