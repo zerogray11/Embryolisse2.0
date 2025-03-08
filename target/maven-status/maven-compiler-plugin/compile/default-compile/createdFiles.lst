@@ -1,0 +1,17 @@
+SysDev\skincare\repository\BreakoutRepository.class
+SysDev\skincare\model\TargetArea.class
+SysDev\skincare\repository\ProductRepository.class
+SysDev\skincare\repository\UserResponseRepository.class
+SysDev\skincare\model\SkinType.class
+SysDev\skincare\model\UserResponse.class
+SysDev\skincare\repository\UserRepository.class
+SysDev\skincare\repository\SkinTypeRepository.class
+SysDev\skincare\model\Concern.class
+SysDev\skincare\SkincareApplication.class
+SysDev\skincare\service\SkincareService.class
+SysDev\skincare\model\Product.class
+SysDev\skincare\controller\SkincareController.class
+SysDev\skincare\model\Breakout.class
+SysDev\skincare\repository\ConcernRepository.class
+SysDev\skincare\repository\TargetAreaRepository.class
+SysDev\skincare\model\User.class
