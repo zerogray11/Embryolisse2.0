@@ -1,111 +1,135 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { 
-  Star, 
-  Heart, 
-  ShoppingCart, 
-  ChevronLeft 
-} from 'lucide-react';
-
-const ProductCard = ({ product, onFavorite, isFavorited }) => {
-  return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-      {/* Product Image */}
-      <div className="w-full aspect-square bg-[rgb(255,245,235)] flex items-center justify-center">
-        <img 
-          src={`/api/placeholder/300/300?text=${encodeURIComponent(product.name)}`} 
-          alt={product.name} 
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Product Details */}
-      <div className="p-6 space-y-4">
-        <div className="flex justify-between items-start">
-          <div>
-            <h3 className="text-2xl font-bold text-[rgb(6,31,108)]">{product.name}</h3>
-          </div>
-          <button 
-            onClick={() => onFavorite(product.id)}
-            className={`
-              transition-colors duration-300
-              ${isFavorited ? 'text-red-500' : 'text-[rgb(6,31,108)]'}
-              hover:text-red-500
-            `}
-          >
-            <Heart size={24} fill={isFavorited ? 'currentColor' : 'none'} />
-          </button>
-        </div>
-
-        {/* Rating */}
-        <div className="flex items-center space-x-1 text-yellow-500">
-          {[...Array(5)].map((_, i) => (
-            <Star 
-              key={i} 
-              size={16} 
-              fill={i < product.rating ? 'currentColor' : 'none'}
-              stroke="currentColor"
-            />
-          ))}
-          <span className="text-gray-600 ml-2 text-sm">({product.reviewCount})</span>
-        </div>
-
-        {/* Price and Discount */}
-        <div className="flex justify-between items-center">
-          <div className="text-[rgb(6,31,108)] font-semibold text-2xl">
-            ${product.price.toFixed(2)}
-          </div>
-          {product.discount > 0 && (
-            <span className="text-green-600 font-semibold">
-              {product.discount}% OFF
-            </span>
-          )}
-        </div>
-
-        {/* Add to Cart */}
-        <button className="w-full bg-[rgb(6,31,108)] text-white py-3 rounded-lg flex items-center justify-center space-x-2 hover:opacity-90">
-          <ShoppingCart size={20} />
-          <span>Add to Cart</span>
-        </button>
-      </div>
-    </div>
-  );
-};
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { ChevronLeft, AlertCircle } from 'lucide-react';
+import ProductCard from './ProductCard'; // Import the ProductCard component
 
 const Summary = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { userResponse = {}, recommendations = [] } = location.state || {};
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [products, setProducts] = useState([]);
   
   // State to track favorited products
   const [favoritedProducts, setFavoritedProducts] = useState(new Set());
 
+  useEffect(() => {
+    // Process recommendations that come directly from the backend
+    try {
+      if (Array.isArray(recommendations) && recommendations.length > 0) {
+        // Enhance products with mock data since ProductResponse doesn't include all UI fields
+        const enhancedProducts = recommendations.map((product, index) => ({
+          ...product,
+          rating: Math.floor(Math.random() * 5) + 1, // Random rating 1-5
+          reviewCount: Math.floor(Math.random() * 200) + 10, // Random review count
+          price: Math.floor(Math.random() * 50) + 20, // Random price $20-$70
+          discount: index % 2 === 0 ? Math.floor(Math.random() * 30) : 0 // Random discount for some products
+        }));
+        setProducts(enhancedProducts);
+        console.log('Products processed successfully:', enhancedProducts);
+      } else {
+        console.log('No recommendations available in location state');
+        setProducts([]);
+      }
+    } catch (error) {
+      console.error('Error processing recommendations:', error);
+      setError('Failed to process product recommendations');
+    }
+  }, [recommendations]);
+
+  // Function to handle fetching products if needed
+  const fetchProducts = async (params) => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      // Example of how to fetch products based on different criteria
+      let endpoint = '';
+      let queryParam = '';
+      
+      if (params.skinType) {
+        endpoint = '/api/products/skintype';
+        queryParam = `skinTypeName=${encodeURIComponent(params.skinType)}`;
+      } else if (params.concern) {
+        endpoint = '/api/products/concern';
+        queryParam = `concernName=${encodeURIComponent(params.concern)}`;
+      } else if (params.breakout) {
+        endpoint = '/api/products/breakout';
+        queryParam = `breakoutName=${encodeURIComponent(params.breakout)}`;
+      } else if (params.targetArea) {
+        endpoint = '/api/products/targetarea';
+        queryParam = `targetAreaName=${encodeURIComponent(params.targetArea)}`;
+      } else if (params.forWinter !== undefined) {
+        endpoint = `/api/products/forWinter/${params.forWinter}`;
+      } else if (params.forSun !== undefined) {
+        endpoint = `/api/products/forSun/${params.forSun}`;
+      }
+      
+      if (endpoint) {
+        const url = queryParam ? `${endpoint}?${queryParam}` : endpoint;
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
+        
+        const productData = await response.json();
+        
+        // If valid product returned, add to products with mock data
+        if (productData && productData.productId) {
+          const enhancedProduct = {
+            ...productData,
+            rating: Math.floor(Math.random() * 5) + 1,
+            reviewCount: Math.floor(Math.random() * 200) + 10,
+            price: Math.floor(Math.random() * 50) + 20,
+            discount: Math.random() > 0.5 ? Math.floor(Math.random() * 30) : 0
+          };
+          
+          setProducts(prev => [...prev, enhancedProduct]);
+          console.log('Product fetched successfully:', enhancedProduct);
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching product:', error);
+      setError('Failed to fetch product recommendations');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleFavorite = (productId) => {
+    if (!productId) {
+      console.warn('Attempted to favorite a product with no ID');
+      return;
+    }
+    
     setFavoritedProducts(prev => {
       const newFavorites = new Set(prev);
       if (newFavorites.has(productId)) {
         newFavorites.delete(productId);
+        console.log(`Product ${productId} removed from favorites`);
       } else {
         newFavorites.add(productId);
+        console.log(`Product ${productId} added to favorites`);
       }
       return newFavorites;
     });
   };
 
-  // Mock product data with additional details
-  const enrichedRecommendations = recommendations.map((product, index) => ({
-    ...product,
-    rating: Math.floor(Math.random() * 5) + 1, // Random rating 1-5
-    reviewCount: Math.floor(Math.random() * 200) + 10, // Random review count
-    price: Math.floor(Math.random() * 50) + 20, // Random price $20-$70
-    discount: index % 2 === 0 ? Math.floor(Math.random() * 30) : 0 // Random discount for some products
-  }));
+  const handleBackClick = () => {
+    navigate(-1);
+  };
 
   return (
     <div className="bg-[rgb(255,240,222)] min-h-screen py-8">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Navigation */}
         <div className="flex justify-between items-center mb-6">
-          <button className="text-[rgb(6,31,108)]">
+          <button 
+            className="text-[rgb(6,31,108)]"
+            onClick={handleBackClick}
+          >
             <ChevronLeft size={24} />
           </button>
         </div>
@@ -127,21 +151,39 @@ const Summary = () => {
             </p>
           </div>
 
-          {enrichedRecommendations.length > 0 ? (
+          {/* Error display */}
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6 flex items-center">
+              <AlertCircle size={20} className="mr-2" />
+              <p>{error}</p>
+            </div>
+          )}
+
+          {/* Loading indicator */}
+          {loading && (
+            <div className="text-center p-8">
+              <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[rgb(6,31,108)] border-r-transparent"></div>
+              <p className="mt-2 text-gray-600">Loading products...</p>
+            </div>
+          )}
+
+          {!loading && products.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {enrichedRecommendations.map((product) => (
+              {products.map((product) => (
                 <ProductCard 
-                  key={product.id} 
+                  key={product.productId || `product-${Math.random()}`} 
                   product={product}
                   onFavorite={handleFavorite}
-                  isFavorited={favoritedProducts.has(product.id)}
+                  isFavorited={favoritedProducts.has(product.productId)}
                 />
               ))}
             </div>
           ) : (
-            <p className="text-gray-700 text-center text-xl">
-              No recommendations found. Let's discover your perfect skincare routine!
-            </p>
+            !loading && !error && (
+              <p className="text-gray-700 text-center text-xl p-8">
+                No recommendations found. Let's discover your perfect skincare routine!
+              </p>
+            )
           )}
 
           {/* Newsletter Section */}

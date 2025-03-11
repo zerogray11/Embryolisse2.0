@@ -5,6 +5,7 @@ import Questionnaire from './pages/Questionnaire';
 import Product from './components/Product';
 import Summary from './components/Summary'; 
 
+
 const App = () => {
   return (
     <Router>
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/questionnaire" element={<Questionnaire />} /> {/* Route for Questionnaire */}
         <Route path="/product" element={<Product />} /> {/* Route for Product */}
         <Route path="/summary" element={<Summary />} /> {/* Route for Summary */}
+       
       </Routes>
     </Router>
   );
