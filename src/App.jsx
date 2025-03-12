@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Questionnaire from './pages/Questionnaire';
 import Product from './components/Product';
 import Summary from './components/Summary'; 
-
+import Chatbot from './components/ChatBot';
 
 const App = () => {
   return (
@@ -14,6 +14,7 @@ const App = () => {
         <Route path="/questionnaire" element={<Questionnaire />} /> {/* Route for Questionnaire */}
         <Route path="/product" element={<Product />} /> {/* Route for Product */}
         <Route path="/summary" element={<Summary />} /> {/* Route for Summary */}
+        <Route path="/chatbot" element={<Chatbot />} /> {/* Route for Summary */}
        
       </Routes>
     </Router>

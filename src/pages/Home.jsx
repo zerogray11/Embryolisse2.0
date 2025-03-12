@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Star, ShoppingCart } from 'lucide-react';
+import { Sparkles, Star, ShoppingCart, MessageSquare } from 'lucide-react';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,6 +11,10 @@ const Home = () => {
 
   const handleNavigateToProduct = () => {
     navigate('/product');
+  };
+
+  const handleNavigateToChatbot = () => {
+    navigate('/chatbot');
   };
 
   return (
@@ -33,32 +37,44 @@ const Home = () => {
             <Sparkles size={24} className="text-[rgb(6,31,108)]" />
           </div>
           <p className="text-gray-700 max-w-xl mx-auto">
-            Unlock the secret to radiant, healthy skin with our personalized skincare experience. 
+            Unlock the secret to radiant, healthy skin with our personalized skincare experience.
             Take our quick questionnaire to find your ideal Embryolisse products.
           </p>
         </div>
 
         {/* Navigation Buttons */}
         <div className="space-y-4 w-full max-w-md">
-          <button 
+          <button
             onClick={handleNavigateToQuestionnaire}
-            className="w-full bg-[rgb(6,31,108)] text-white py-4 rounded-lg 
-            flex items-center justify-center space-x-2 hover:opacity-90 
-            transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-[rgb(6,31,108)] text-white py-4 rounded-lg
+              flex items-center justify-center space-x-2 hover:opacity-90
+              transition-all duration-300 transform hover:scale-105"
           >
             <Star size={20} />
             <span>Start Skincare Questionnaire</span>
           </button>
 
-          <button 
+          <button
             onClick={handleNavigateToProduct}
-            className="w-full border-2 border-[rgb(6,31,108)] text-[rgb(6,31,108)] 
-            py-4 rounded-lg flex items-center justify-center space-x-2 
-            hover:bg-[rgb(6,31,108)] hover:text-white 
-            transition-all duration-300 transform hover:scale-105"
+            className="w-full border-2 border-[rgb(6,31,108)] text-[rgb(6,31,108)]
+              py-4 rounded-lg flex items-center justify-center space-x-2
+              hover:bg-[rgb(6,31,108)] hover:text-white
+              transition-all duration-300 transform hover:scale-105"
           >
             <ShoppingCart size={20} />
             <span>Browse Our Products</span>
+          </button>
+
+          {/* New Le ChatBot Button */}
+          <button
+            onClick={handleNavigateToChatbot}
+            className="w-full border-2 border-[rgb(6,31,108)] text-[rgb(6,31,108)]
+              py-4 rounded-lg flex items-center justify-center space-x-2
+              hover:bg-[rgb(6,31,108)] hover:text-white
+              transition-all duration-300 transform hover:scale-105"
+          >
+            <MessageSquare size={20} />
+            <span>Le ChatBot</span>
           </button>
         </div>
       </div>
