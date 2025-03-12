@@ -1,9 +1,15 @@
-
-  {
-    "rewrites": [
+{
+    "routes": [
       {
-        "source": "/api/(.*)",
-        "destination": "https://embryolisse-python-5ce7c3101a2a.herokuapp.com/api/$1"
+        "handle": "filesystem"
+      },
+      {
+        "src": "/api/(.*)",
+        "dest": "https://embryolisse-python-5ce7c3101a2a.herokuapp.com/api/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
       }
     ]
   }
