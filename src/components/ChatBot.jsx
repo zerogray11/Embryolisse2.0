@@ -29,7 +29,7 @@ const Chatbot = () => {
         setIsThinking(true);
 
         try {
-            const response = await axios.post('/api/chat', {
+            const response = await axios.post('https://embryolisse-python-5ce7c3101a2a.herokuapp.com/api/chat', {
                 messages: updatedMessages,
                 context: context,
             });
@@ -68,87 +68,84 @@ const Chatbot = () => {
                 <h1 className="text-3xl font-light text-[rgb(6,31,108)] tracking-wider">EMBRYOLISSE</h1>
             </div>
 
-           
-                <div style={styles.chatbotContainer} className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-6">
-                 
-                    <div style={styles.chatWindow} ref={chatWindowRef}>
-                        {messages.map((msg, index) => (
-                            <div key={index} style={msg.role === 'user' ? styles.userMessageContainer : styles.botMessageContainer}>
-                                <div style={msg.role === 'user' ? styles.userMessage : styles.botMessage}>
-                                    <div style={styles.messageText}>{msg.content}</div>
-                                    {msg.products && msg.products.map((product, idx) => (
-                                        <div key={idx} style={styles.productContainer}>
-                                            <a href={product.url} target="_blank" rel="noopener noreferrer" style={styles.productLink}>
-                                                <img
-                                                    src={`data:image/jpeg;base64,${product.image}`}
-                                                    alt={product.title}
-                                                    style={styles.productImage}
-                                                    onError={(e) => {
-                                                        e.target.src = 'path/to/fallback-image.jpg'; // Fallback image
-                                                        console.error("Image failed to load:", product.title);
-                                                    }}
-                                                />
-                                                <div style={styles.productTitle}>{product.title}</div>
-                                            </a>
-                                            <div style={styles.productDetails}>
-                                                <div style={styles.detailSection}>
-                                                    <span style={styles.detailLabel}>Benefits</span>
-                                                    <p style={styles.detailText}>{product.benefits}</p>
-                                                </div>
-                                                <div style={styles.detailSection}>
-                                                    <span style={styles.detailLabel}>Ingredients</span>
-                                                    <p style={styles.detailText}>{product.ingredients}</p>
-                                                </div>
-                                                <div style={styles.detailSection}>
-                                                    <span style={styles.detailLabel}>Usage</span>
-                                                    {typeof product.usage === 'string' ? (
-                                                        <div style={styles.usageList}>
-                                                            {product.usage.split('\n').map((line, index) => (
-                                                                <div key={index} style={styles.usageItem}>
-                                                                    <span style={styles.usageDash}>-</span> {line}
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    ) : product.usage && typeof product.usage === 'object' ? (
-                                                        <div style={styles.usageList}>
-                                                            {Object.entries(product.usage).map(([key, value], i) => (
-                                                                <div key={i} style={styles.usageItem}>
-                                                                    <span style={styles.usageDash}>-</span> {value}
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    ) : (
-                                                        <p style={styles.detailText}>No usage instructions available.</p>
-                                                    )}
-                                                </div>
+            <div style={styles.chatbotContainer} className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-6">
+                <div style={styles.chatWindow} ref={chatWindowRef}>
+                    {messages.map((msg, index) => (
+                        <div key={index} style={msg.role === 'user' ? styles.userMessageContainer : styles.botMessageContainer}>
+                            <div style={msg.role === 'user' ? styles.userMessage : styles.botMessage}>
+                                <div style={styles.messageText}>{msg.content}</div>
+                                {msg.products && msg.products.map((product, idx) => (
+                                    <div key={idx} style={styles.productContainer}>
+                                        <a href={product.url} target="_blank" rel="noopener noreferrer" style={styles.productLink}>
+                                            <img
+                                                src={`data:image/jpeg;base64,${product.image}`}
+                                                alt={product.title}
+                                                style={styles.productImage}
+                                                onError={(e) => {
+                                                    e.target.src = 'path/to/fallback-image.jpg'; // Fallback image
+                                                    console.error("Image failed to load:", product.title);
+                                                }}
+                                            />
+                                            <div style={styles.productTitle}>{product.title}</div>
+                                        </a>
+                                        <div style={styles.productDetails}>
+                                            <div style={styles.detailSection}>
+                                                <span style={styles.detailLabel}>Benefits</span>
+                                                <p style={styles.detailText}>{product.benefits}</p>
+                                            </div>
+                                            <div style={styles.detailSection}>
+                                                <span style={styles.detailLabel}>Ingredients</span>
+                                                <p style={styles.detailText}>{product.ingredients}</p>
+                                            </div>
+                                            <div style={styles.detailSection}>
+                                                <span style={styles.detailLabel}>Usage</span>
+                                                {typeof product.usage === 'string' ? (
+                                                    <div style={styles.usageList}>
+                                                        {product.usage.split('\n').map((line, index) => (
+                                                            <div key={index} style={styles.usageItem}>
+                                                                <span style={styles.usageDash}>-</span> {line}
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : product.usage && typeof product.usage === 'object' ? (
+                                                    <div style={styles.usageList}>
+                                                        {Object.entries(product.usage).map(([key, value], i) => (
+                                                            <div key={i} style={styles.usageItem}>
+                                                                <span style={styles.usageDash}>-</span> {value}
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <p style={styles.detailText}>No usage instructions available.</p>
+                                                )}
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                        {isThinking && (
-                            <div style={styles.botMessageContainer}>
-                                <div style={styles.botMessage}>
-                                    <span style={styles.thinkingText}>Thinking...</span>
-                                </div>
+                        </div>
+                    ))}
+                    {isThinking && (
+                        <div style={styles.botMessageContainer}>
+                            <div style={styles.botMessage}>
+                                <span style={styles.thinkingText}>Thinking...</span>
                             </div>
-                        )}
-                    </div>
-                    <div style={styles.inputContainer}>
-                        <input
-                            type="text"
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-                            style={styles.input}
-                            placeholder="Type your message..."
-                        />
-                        <button onClick={sendMessage} style={styles.button}>Send</button>
-                    </div>
+                        </div>
+                    )}
+                </div>
+                <div style={styles.inputContainer}>
+                    <input
+                        type="text"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                        style={styles.input}
+                        placeholder="Type your message..."
+                    />
+                    <button onClick={sendMessage} style={styles.button}>Send</button>
                 </div>
             </div>
-        
+        </div>
     );
 };
 
