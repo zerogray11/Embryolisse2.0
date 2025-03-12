@@ -14,7 +14,7 @@ export default defineConfig({
     proxy: {
       // Proxy for Flask backend (now pointing to Heroku)
       '/api': {
-        target: 'https://git.heroku.com/embryolisse-python.git', 
+        target: 'https://embryolisse-python-5ce7c3101a2a.herokuapp.com', 
         changeOrigin: true,
         secure: false, // Disable SSL verification if using self-signed certificates
       },
