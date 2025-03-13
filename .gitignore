@@ -1,8 +1,13 @@
-HELP.md
+# Ignore the entire target directory
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+
+# Allow target directory to be tracked
+!target/
+
+# Include .jar files in any subdirectory of target
+!target/**/*.jar
+
+# Other ignore rules...
 
 ### STS ###
 .apt_generated
