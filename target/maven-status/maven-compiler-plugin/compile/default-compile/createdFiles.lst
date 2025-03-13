@@ -1,11 +1,11 @@
 com/embryolisse/skincare/controller/response/ProductResponse.class
 com/embryolisse/skincare/service/ProductService.class
-com/embryolisse/skincare/SkincareApplication.class
 com/embryolisse/skincare/repository/ProductRepository.class
+com/embryolisse/skincare/model/Concern.class
+com/embryolisse/skincare/SkincareApplication.class
 com/embryolisse/skincare/model/Product.class
 com/embryolisse/skincare/model/TargetArea.class
 com/embryolisse/skincare/service/WebConfig.class
 com/embryolisse/skincare/controller/ProductController.class
-com/embryolisse/skincare/model/Concern.class
 com/embryolisse/skincare/model/Breakout.class
 com/embryolisse/skincare/model/SkinType.class
