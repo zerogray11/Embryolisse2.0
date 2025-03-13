@@ -13,7 +13,11 @@ public class KeystoreLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Call the method to decode and save the keystore
-        KeystoreUtil.saveKeystoreFromEnv(keystoreBase64);
+        if (keystoreBase64 == null || keystoreBase64.isEmpty()) {
+            System.err.println("Keystore Base64 is empty or null");
+        } else {
+            System.out.println("Keystore Base64 is set, attempting to save...");
+            KeystoreUtil.saveKeystoreFromEnv(keystoreBase64);
+        }
     }
 }
