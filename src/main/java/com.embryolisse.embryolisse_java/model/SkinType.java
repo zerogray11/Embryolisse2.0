@@ -1,7 +1,7 @@
 package com.embryolisse.embryolisse_java.model;
 
 import jakarta.persistence.*;
-import com.embryolisse.embryolisse_java.model.Product;
+
 import java.util.List;
 
 @Entity

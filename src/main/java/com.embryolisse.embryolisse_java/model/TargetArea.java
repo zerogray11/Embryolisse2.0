@@ -1,5 +1,4 @@
 package com.embryolisse.embryolisse_java.model;
-import com.embryolisse.embryolisse_java.model.Product;
 import jakarta.persistence.*;
 
 import java.util.List;
