@@ -12,18 +12,17 @@ export default defineConfig({
       cert: fs.readFileSync(path.resolve(__dirname, './server.crt')), // Path to your certificate
     },
     proxy: {
-      // Proxy for Flask backend (now pointing to Heroku)
-      '/api': {
-        target: 'https://embryolisse-python-5ce7c3101a2a.herokuapp.com', 
+      // Proxy for Flask backend
+      '/api/flask': {
+        target: 'https://embryolisse-python-5ce7c3101a2a.herokuapp.com',
         changeOrigin: true,
         secure: false, // Disable SSL verification if using self-signed certificates
       },
-      // Proxy for Spring Boot backend (https://localhost:8443)
+      // Proxy for Spring Boot backend
       '/api/spring': {
         target: 'https://embryolisse-backend-103c79c8a16d.herokuapp.com',
         changeOrigin: true,
         secure: false, // Disable SSL verification for self-signed certificates
-        rewrite: (path) => path.replace(/^\/api\/spring/, '/api'), // Rewrite `/api/spring` to `/api`
       },
     },
   },
