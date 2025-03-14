@@ -1,10 +1,17 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/api'; // Updated to match the new routing
+// Axios instance for Spring Boot backend (handles /api/products)
+const springBootClient = axios.create({
+  baseURL: '/api/products', // Base URL for Spring Boot backend
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  }
+});
 
-// Create axios instance with default configs
-const apiClient = axios.create({
-  baseURL: API_BASE_URL,
+// Axios instance for Flask backend (handles all other /api requests)
+const flaskClient = axios.create({
+  baseURL: '/api', // Base URL for Flask backend
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
@@ -12,31 +19,31 @@ const apiClient = axios.create({
 });
 
 // Add response interceptor for better error handling
-apiClient.interceptors.response.use(
-  response => response,
-  error => {
-    console.error('API Error:', error);
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      console.error('Response data:', error.response.data);
-      console.error('Response status:', error.response.status);
-    } else if (error.request) {
-      // The request was made but no response was received
-      console.error('No response received:', error.request);
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      console.error('Request error:', error.message);
+const addErrorInterceptor = (client) => {
+  client.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      console.error('API Error:', error);
+      if (error.response) {
+        console.error('Response data:', error.response.data);
+        console.error('Response status:', error.response.status);
+      } else if (error.request) {
+        console.error('No response received:', error.request);
+      } else {
+        console.error('Request error:', error.message);
+      }
+      return Promise.reject(error);
     }
-    return Promise.reject(error);
-  }
-);
+  );
+};
 
-// Fetch a product by skin type
+addErrorInterceptor(springBootClient);
+addErrorInterceptor(flaskClient);
+
+// Fetch a product by skin type from Spring Boot backend
 export const getProductsBySkinType = async (skinTypeName) => {
   try {
-    const response = await apiClient.get('/products/skintype', { params: { skinTypeName } });
-    // Return the single product in an array to maintain consistency with the component logic
+    const response = await springBootClient.get('/skintype', { params: { skinTypeName } });
     return { data: response.data ? [response.data] : [] };
   } catch (error) {
     console.error(`Error fetching product by skin type ${skinTypeName}:`, error);
@@ -44,10 +51,10 @@ export const getProductsBySkinType = async (skinTypeName) => {
   }
 };
 
-// Fetch a product by breakout frequency
+// Fetch a product by breakout frequency from Spring Boot backend
 export const getProductsByBreakout = async (breakoutName) => {
   try {
-    const response = await apiClient.get('/products/breakout', { params: { breakoutName } });
+    const response = await springBootClient.get('/breakout', { params: { breakoutName } });
     return { data: response.data ? [response.data] : [] };
   } catch (error) {
     console.error(`Error fetching product by breakout ${breakoutName}:`, error);
@@ -55,10 +62,10 @@ export const getProductsByBreakout = async (breakoutName) => {
   }
 };
 
-// Fetch a product by concern
+// Fetch a product by concern from Spring Boot backend
 export const getProductsByConcern = async (concernName) => {
   try {
-    const response = await apiClient.get('/products/concern', { params: { concernName } });
+    const response = await springBootClient.get('/concern', { params: { concernName } });
     return { data: response.data ? [response.data] : [] };
   } catch (error) {
     console.error(`Error fetching product by concern ${concernName}:`, error);
@@ -66,10 +73,10 @@ export const getProductsByConcern = async (concernName) => {
   }
 };
 
-// Fetch a product by target area
+// Fetch a product by target area from Spring Boot backend
 export const getProductsByTargetArea = async (targetAreaName) => {
   try {
-    const response = await apiClient.get('/products/targetarea', { params: { targetAreaName } });
+    const response = await springBootClient.get('/targetarea', { params: { targetAreaName } });
     return { data: response.data ? [response.data] : [] };
   } catch (error) {
     console.error(`Error fetching product by target area ${targetAreaName}:`, error);
@@ -77,12 +84,12 @@ export const getProductsByTargetArea = async (targetAreaName) => {
   }
 };
 
-// Fetch a product for winter
+// Fetch a product for winter from Spring Boot backend
 export const getProductsByForWinter = async (forWinter) => {
   try {
     // Convert boolean to string for URL path
     const boolValue = forWinter === true || forWinter === 'true' ? true : false;
-    const response = await apiClient.get(`/products/forWinter/${boolValue}`);
+    const response = await springBootClient.get(`/forWinter/${boolValue}`);
     return { data: response.data ? [response.data] : [] };
   } catch (error) {
     console.error(`Error fetching product for winter (${forWinter}):`, error);
@@ -90,15 +97,26 @@ export const getProductsByForWinter = async (forWinter) => {
   }
 };
 
-// Fetch a product for sun
+// Fetch a product for sun from Spring Boot backend
 export const getProductsByForSun = async (forSun) => {
   try {
     // Convert boolean to string for URL path
     const boolValue = forSun === true || forSun === 'true' ? true : false;
-    const response = await apiClient.get(`/products/forSun/${boolValue}`);
+    const response = await springBootClient.get(`/forSun/${boolValue}`);
     return { data: response.data ? [response.data] : [] };
   } catch (error) {
     console.error(`Error fetching product for sun (${forSun}):`, error);
     return { data: [] };
+  }
+};
+
+// Fetch some data from Flask backend
+export const getSomeDataFromFlask = async () => {
+  try {
+    const response = await flaskClient.get('/some-endpoint');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching data from Flask backend:', error);
+    throw error;
   }
 };
