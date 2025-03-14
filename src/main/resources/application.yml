@@ -1,13 +1,21 @@
 spring:
   datasource:
-    url: ${JDBC_DATABASE_URL}
-    username: ${JDBC_DATABASE_USERNAME}
-    password: ${JDBC_DATABASE_PASSWORD}
-    driver-class-name: org.postgresql.Driver
+    url: ${JDBC_DATABASE_URL} # Use the Heroku-provided JDBC URL
+    username: ${JDBC_DATABASE_USERNAME} # Use the Heroku-provided username
+    password: ${JDBC_DATABASE_PASSWORD} # Use the Heroku-provided password
+    driver-class-name: org.postgresql.Driver # PostgreSQL driver
+    hikari:
+      maximum-pool-size: 5 # Reduce the connection pool size for faster startup
   jpa:
     hibernate:
-      ddl-auto: validate
-    show-sql: true
+      ddl-auto: validate # Validate the schema at startup
+    show-sql: true # Show SQL queries in logs (useful for debugging)
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Remove explicit dialect configuration (Hibernate auto-detects it)
+        # dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true # Format SQL queries for better readability
+  main:
+    lazy-initialization: true # Enable lazy initialization to speed up startup
+server:
+  port: ${PORT:8080} # Bind to the Heroku-provided port or fallback to 8080 for local development
