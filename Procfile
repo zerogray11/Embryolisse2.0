@@ -1,1 +1,1 @@
-web: java -jar target/skincare-0.0.1-SNAPSHOT.jar
+web: java -jar target/embryolisse-java-0.0.1-SNAPSHOT.jar
