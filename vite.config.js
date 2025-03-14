@@ -20,7 +20,7 @@ export default defineConfig({
       },
       // Proxy for Spring Boot backend (https://localhost:8443)
       '/api/spring': {
-        target: 'https://embryolisse-java-1c631c901111.herokuapp.com',
+        target: 'https://embryolisse-backend-103c79c8a16d.herokuapp.com',
         changeOrigin: true,
         secure: false, // Disable SSL verification for self-signed certificates
         rewrite: (path) => path.replace(/^\/api\/spring/, '/api'), // Rewrite `/api/spring` to `/api`
