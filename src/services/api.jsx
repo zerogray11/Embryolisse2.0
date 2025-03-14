@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/api/spring'; // Ensure this matches your backend URL
+const API_BASE_URL = '/api'; // Updated to match the new routing
 
 // Create axios instance with default configs
 const apiClient = axios.create({

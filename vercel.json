@@ -4,8 +4,8 @@
       "handle": "filesystem"
     },
     {
-      "src": "/api/spring/(.*)",
-      "dest": "https://embryolisse-backend-103c79c8a16d.herokuapp.com/api/spring/$1"
+      "src": "/api/(.*)",
+      "dest": "https://embryolisse-backend-103c79c8a16d.herokuapp.com/api/$1"
     },
     {
       "src": "/api/(.*)",
