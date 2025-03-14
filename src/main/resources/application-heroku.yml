@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL} # Use the Heroku-provided JDBC URL
+    username: ${JDBC_DATABASE_USERNAME} # Use the Heroku-provided username
+    password: ${JDBC_DATABASE_PASSWORD} # Use the Heroku-provided password
+    driver-class-name: org.postgresql.Driver # PostgreSQL driver
+    hikari:
+      maximum-pool-size: 5 # Reduce the connection pool size for faster startup
+  jpa:
+    hibernate:
+      ddl-auto: update # Temporarily set to 'update' for testing (change back to 'validate' after testing)
+    show-sql: true # Show SQL queries in logs (useful for debugging)
+    properties:
+      hibernate:
+        format_sql: true # Format SQL queries for better readability
+  main:
+    lazy-initialization: true # Enable lazy initialization to speed up startup
+server:
+  port: ${PORT:8080} # Bind to the Heroku-provided port or fallback to 8080 for local development
+logging:
+  level:
+    org.springframework: DEBUG # Enable debug logging for Spring
+    org.hibernate: DEBUG # Enable debug logging for Hibernate
+    com.embryolisse: DEBUG # Enable debug logging for your application packages
