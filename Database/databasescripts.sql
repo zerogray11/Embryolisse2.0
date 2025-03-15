@@ -481,3 +481,57 @@ CREATE TABLE user_responses (
     spends_time_in_sun BOOLEAN
 );
 
+-- Altering the tables to add columns for created_at, updated_at and deleted_at
+-- Add columns to products table
+ALTER TABLE products
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to skin_types table
+ALTER TABLE skin_types
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to product_skin_types table
+ALTER TABLE product_skin_types
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to concerns table
+ALTER TABLE concerns
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to product_concerns table
+ALTER TABLE product_concerns
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to breakouts table
+ALTER TABLE breakouts
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to product_breakouts table
+ALTER TABLE product_breakouts
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to target_areas table
+ALTER TABLE target_areas
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
+
+-- Add columns to product_target_areas table
+ALTER TABLE product_target_areas
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_at TIMESTAMP;
